@@ -1,0 +1,892 @@
+/*
+Template: twentyfourteen
+Theme Name: Twenty Fourteen Child
+Theme URI: http://wordpress.org/themes/twentyfourteen
+Author: Reto 
+Author URI: http://wetterleuchte.ch
+Description: Adapted twentyfourteen theme 
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: personal 
+Text Domain: twentyfourteen-child
+*/
+
+@import url("../twentyfourteen/style.css");
+
+
+/* --------------------------------------------------------------
+   Make the theme wetterturnier blue first
+-------------------------------------------------------------- */
+
+
+.site:before {
+   background-color: #0c3772;
+}
+::selection {
+   background: #b2c8e7;
+}
+
+.content-area {
+   padding-top: 40px;
+}
+
+nav#primary-navigation { padding-top: 0px; }
+
+/* For mobile phones and shit: remove second sidebar */
+/* if window width is not maximum */
+div.content-sidebar, .content-sidebar {
+   display: none;
+   width: 320px;
+   right: 5px;
+   padding: 40px 10px;
+   margin-right: 20px;
+}
+
+/* Hide content-sidebar-2 unless the screen resolution exceeds 1800px */
+div.content-sidebar-2 { right: 0px; display: block; }
+
+/* Home button next to the cities buttons */
+li.home-button { display: none; }
+
+/* Default: show small city navigation links */
+li.wtnav-cities-small {
+   display: block;
+   float: left;
+   border: none; 
+}
+li.wtnav-cities-small a { 
+   line-height: 48px;
+   font-size: 1em;
+   padding: 0px 20px;
+   white-space: nowrap;
+}
+
+/* Default: show big city navigation links */
+li.wtnav-cities-big {
+   display: none;
+   float: left;
+}
+li.wtnav-cities-big a { 
+   padding: 0px 20px;
+   white-space: nowrap;
+}
+
+/* Used this div to show the resolution used by this css sheet
+ * as the developer told me something different. */
+#current-css-resolution { color: red; font-weight: bold; float: right; font-size: 15px; } 
+#current-css-resolution span { display: none; }
+#current-css-resolution:after { content: "Minimal resolution"; }
+
+
+.site {
+   max-width: 1600px;
+}
+#main {
+   max-width: 100%; 
+   min-width: 500px;
+}
+div#content {
+   margin-right: 320px;
+}
+div#content.full-width-page {
+   margin-right: 0%;
+}
+.full-width .archive-header,
+.full-width .comments-area,
+.full-width .image-navigation,
+.full-width .page-header,
+.full-width .page-content,
+.full-width .post-navigation,
+.full-width .site-content .entry-header,
+.full-width .site-content .entry-content,
+.full-width .site-content .entry-summary,
+.full-width .site-content footer.entry-meta {
+   padding-right: 0px;
+   padding-left: 0px;
+}
+div#page {
+   position: relative; 
+   max-width: 100%; 
+   min-width: 500px;
+}
+div.entry-content a.content:before,
+div.entry-content a.content:after {
+   display: none;
+}
+/* on is_home the #main-content has additional class home-content 
+ * for styling purposes. */ 
+#main-content {
+   background-color: white;
+}
+div#main-content.home-content div#content {
+   margin-right: 0%;
+}
+div#main-content.home-content div#content div.twocolumn-left,
+div#main-content.home-content div#content div.twocolumn-right {
+   width: 97%;
+   margin-left: 2%;
+   float: left;
+}
+/* by default (for small devices) the right sidebar is hidden. The
+ * user can choose which column to show (div.twocolumn-select). As soon
+ * as the window width exceeds 1080 px both will be shown */
+div#content.index-content .twocolumn-left  { display: none; }
+div#content.index-content .twocolumn-right { display: block; }
+/* twocolumn select tyle */
+div.twocolumn-select {
+   padding: 0px 10px 25px 10px;
+   width: 100%;
+}
+div.twocolumn-select input {
+   width: 45%;
+   margin: 0px 2%;
+}
+div#main-content.home-content div#content div.twocolumn-footer {
+   clear: both;
+}
+.site-header {
+   max-width: 100%;
+   background-repeat: no-repeat;
+}
+.search-toggle {
+   background-color: #6592cf;
+   display: none;
+   margin-right: 0px;
+}
+.search-toggle:hover, .search-toggle.active {
+   /* background-color: #3864a0; */
+   background-color: #FF6600;
+}
+a, .content-sidebar .widget a {
+   color: #3864a0;
+}
+.content-sidebar .widget a:hover {
+   color: #3864a0;
+}
+a:active, a:hover, .widget a:hover,
+.entry-meta a:hover {
+   color: #6592cf;
+}
+.entry-title a:hover {
+   color: #3864a0;
+}
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.widget button,
+.widget .button,
+.widget input[type="button"],
+.widget input[type="reset"],
+.widget input[type="submit"] {
+   /* background-color: #3864a0; */
+   background-color: #FF6600;
+}
+button:hover,
+input[type="submit"]:hover,
+.button:hover,
+.widget button:hover,
+.widget input[type="submit"]:hover,
+.widget .button:hover {
+   /* background-color: #6592cf; */
+   background-color: #FF6600;
+   color: black;
+}
+
+#secondary aside.widget_nav_menu {
+   padding-bottom: 25px;
+   margin: 0;
+}
+
+/* Hide language buttons from primary menu */
+#secondary aside.widget_nav_menu li.lang-item { display: none; }
+#secondary li.menu-item.space-below {
+   padding-bottom: 25px;
+}
+
+/* --------------------------------------------------------------
+   When the page width is small: hide secondary navigation but show
+   the 'collapsed' version in the top bar. 
+   We use this to make the menu responsive for wetterturnier.de
+--------------------------------------------------------------- */
+div#secondary-topbar {
+   display: none;
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   width: 50px;
+   height: 100%;
+   background-color: #1c1c1c;
+   background-image: url('secondary-topbar.svg');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: auto 60%;
+}
+div#secondary-topbar ul {
+   display: none;
+   position: relative;
+   top: 100%;
+   left: 0px;
+   border: none;
+   margin: 0px;
+   padding: 5px 0 0 0;
+
+   list-style: none;
+   min-width: 400px;
+   background-color: #0c3772;
+}
+div#secondary-topbar ul li {
+   list-style: none;
+   padding: 3px 0;
+}
+div#secondary-topbar ul li:hover > a{
+   color: #6592cf;
+}
+div#secondary-topbar ul li a {
+   margin: 20px;
+   color: white;
+   font-weight: bold;
+   font-size: 1.2em;
+   text-transform: uppercase;
+}
+div#secondary-topbar ul li ul {
+   display: block;
+   background-color: #1c1c1c;
+}
+
+div.wetterturnier-cities-menu {
+   float: left;
+}
+
+@media screen and (max-width: 1007px) {
+   div.header-main h1.site-title {
+      padding-left: 90px;
+   }
+   div#secondary {
+      display: none;
+   }
+   div#secondary-topbar {
+      display: block;
+   }
+   div.wetterturnier-cities-menu { padding-left: 50px; }
+}
+
+
+/* --------------------------------------------------------------
+   Login form for responsive design when secondary sidebar
+   collapses. Shows an extra button in the top navigation with
+   the wordpress login form.
+   Also defines the styling of the form when wp_login_form()
+   is called.
+-------------------------------------------------------------- */
+div#logout-topbar, div#login-topbar {
+   display: block;
+   position: absolute;
+   left: 50px;
+   top: 0px;
+   width: 50px;
+   height: 100%;
+   background-color: #1c1c1c;
+   display: none;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: auto 60%;
+}
+#login-topbar       { background-image: url('login-topbar.svg'); }
+#logout-topbar      { background-image: url('logout-topbar.svg'); }
+
+/* --------------------------------------------------------------
+   Shows an extra button in the top navigation with
+   the wordpress login form.
+   Also defines the styling of the form when wp_login_form()
+   is called.
+-------------------------------------------------------------- */
+div#login-cities-menu {
+   display: block;
+   position: relative;
+   width: 50px;
+   height: 48px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: auto 60%;
+   background-image: url('login-topbar.svg');
+}
+div#login-cities-menu:hover { background-color: #FF6600; }
+
+/* For the login-forms not in the top navigation bar */
+form[name='loginform'] {
+   width: 300px;
+   padding: 2em 0;
+}
+/* For the login-form in the top navigation bar */
+#login-cities-menu form[name='loginform'], #login-topbar form[name='loginform'] {
+   display: none;
+   position: relative;
+   top: 100%;
+   width: 300px;
+   padding: 20px;
+   background-color: #0c3772;
+   color: white;
+}
+#login-topbar form[name='loginform'] {
+   left: 0px;
+}
+#login-cities-menu form[name='loginform'] {
+   right: 290px;
+}
+form[name='loginform'] p {
+   margin-bottom: 4px;
+}
+form[name='loginform'] input[type='password'],
+form[name='loginform'] input[type='text'], {
+   width: 100%;
+}
+form[name='loginform'] label {
+   display: block;
+   float: none;
+}
+form[name='loginform'] > p.login-submit {
+   padding: 0;
+   margin: 0;
+}
+form[name='loginform'] > p.login-submit > input[type='submit'] {
+   margin: 0;
+   width: 100%;
+}
+form[name='loginform'] > a {
+   display: block;
+   width: 100%;
+   height: 100%;
+   cursor: pointer;
+}
+
+@media screen and (max-width: 1007px) {
+   div#logout-topbar, div#login-topbar {
+      display: block;
+   }
+   div#login-cities-menu { display: none; }
+}
+
+/* --------------------------------------------------------------
+   Theme customization starts here
+-------------------------------------------------------------- */
+
+/* default header bg color */
+#site-header { pointer: cursor; background: #0c3772; position: relative; }
+
+/* styling the twenyfourteen child theme a little bit */
+aside.widget_pages h1 {
+    display: none;
+}
+aside.widget_pages ul li a {
+    font-weight: bold;
+    text-transform: uppercase; 
+    font-size: 1.5em;
+}
+
+div.site-content .entry-header,
+div.full-width-page .entry-content,
+div.full-width-page .entry-header {
+   max-width: 100%; 
+   margin: 0px;
+   padding: 0px;
+}
+.list-view .site-content .hentry {
+   padding-top: 0;
+   border: none;
+}
+.site-content .entry-content {
+   padding: 0;
+   margin: 0:
+}
+
+.bbpress-page {
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Content */
+h1.entry-title {
+   width: 96%;
+   padding: 15px 3% 15px 0;
+   margin: 0;
+}
+h1.entry-title.extra-padding { padding-left: 3%; }
+header.entry-header h1.entry-title {
+   padding: 15px 0;
+}
+.hentry {
+   width: 94%;
+   max-width: 100%;
+   padding: 0px 3%;
+}
+
+/* bbpress.php styling for forum */
+.type-forum.hentry {
+    margin: 0 auto 48px;
+    padding-left: 260px;
+    max-width: 90%;
+}
+
+.type-forum.hentry .entry-header,
+.type-forum.hentry .entry-content {
+    padding: 0px;
+    margin: 0px;
+    max-width: 100%;
+}
+
+.primary-sidebar .widget .widget-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-bottom: 0px;
+    padding: 0 0 6px;
+}
+
+
+/* Sidebar nested navigation */
+aside.widget_nav_menu ul li {
+    position: relative;
+    font-weight: bold;
+    text-transform: uppercase; 
+    font-size: 1.5em;
+}
+aside.widget_nav_menu ul li ul li {
+    font-size: 0.8em;
+}
+ul.sub-menu {
+    position: absolute; 
+    display: none; 
+    float: none;
+    left: 150px;
+    top: -10px;
+    z-index: 20;
+    min-width: 150px;
+    margin: 0px;
+    padding: 10px 30px 10px 10px;
+    background-color: #1c1c1c;
+}
+ul.sub-menu li {
+    margin: 0px;
+    white-space: nowrap;
+}
+
+.widget_nav_menu {
+    margin-bottom: 6px;
+}
+
+.widget_search {
+    margin-top: 30px;
+}
+
+/* Styling for bbpress loing form */
+
+.bbp_widget_login, .bbp_widget_login > h1 {
+   margin: 0px;
+   padding: 0;
+   cursor: pointer;
+}
+
+form.bbp-login-form fieldset {
+    border: none; 
+}
+
+form.bbp-login-form {
+    display: none;
+}
+
+/* Page width general */
+.page.hentry {
+   max-width: 96%;
+   padding: 0 3%;
+}
+.site-content .entry-content {
+   max-width: 100%;
+   margin: 0px;
+}
+.site-content .entry-header {
+   max-width: 100%;
+}
+
+/* styling the content of bbpress.php which is in
+   div#content.forum-page */
+
+#content.site-content.forum-page {
+    width: 94%;
+    padding: 0px 3%;
+    margin: 0px;
+}
+/* #content.site-content.forum-page * article { */
+.type-forum.hentry {
+    width: 100%;
+    max-width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.forum-page * .entry-content,
+.forum-page * .entry-header {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Footer stylin */
+.site-footer {
+   position: relative;
+   min-height: 60px;
+   text-align: right;
+   background-color: transparent;
+   padding: 0 0px 10px 260px;
+   /* padding: 0 320px 10px 260px; */
+   text-align: left;
+   color: blue;
+}
+.site-footer logo {
+   display: block;
+   float: left;
+   width: 200px;
+   margin-left: 10px;
+   border-top: 5px solid #000;
+}
+.site-footer logo h1 {
+   color: #2b2b2b;
+   font-size: 10px;
+   font-weight: 900;
+   margin: 0;
+   padding-top: 7px;
+   text-transform: uppercase;
+}
+@media screen and (max-width: 1550px) {
+   .site-footer logo:nth-child(4) {
+      clear: both;
+   }
+   .site-footer logo:nth-child(n+4) {
+      border: none;
+      margin-top: 10px; 
+   }
+}
+@media screen and (max-width: 1007px) {
+   .site-footer {
+      padding: 0 320px 0 0;
+   }
+   .site-footer h1 { display: none; }
+}
+@media screen and (max-width: 783px) {
+   .site-footer { padding: 0; }
+}
+@media screen and (max-width: 670px) {
+   .site-footer logo, .site-footer logo img {
+      width: 150px;
+   }
+}
+   
+.site-footer logo img {
+   width: 100%;
+}
+
+/* Table in show_leading output */
+table.wt-leading, table.wt-leading tbody tr, table.wt-leading * td,
+table.wt-leading, table.wt-leading thead tr, table.wt-leading * th {
+   border: none;
+   padding: 0px;
+   margin: 0px;
+   clear: both;
+   vertical-align: top;
+}
+ table.wt-leading * th {
+   font-size: .8em;
+   text-decoration: italic;
+   font-weight: normal;
+   color: gray;
+}
+.list-view .site-content .hentry.wt-leading,
+table.wt-leading {
+   padding: 5px 0 15px 0;
+   margin: 0px;
+   border: none;
+}
+table.wt-leading .wt-leading-position {
+   text-align: center;
+   padding: 0px 5px;
+}
+table.wt-leading .wt-leading-user {
+   font-weight: bold;
+}
+table.wt-leading .wt-leading-points {
+   text-align: right;
+}
+div.wt-leading-avatar {
+   display: block;
+   float: left;
+   padding-bottom: 10px;
+}
+
+/* Styling header and navigation on the left side of the page */ 
+.site-header {
+   background-color: transparent;
+}
+header#masthead {
+   background-color: #0c3772;
+}
+div.header-main {
+   background-color: #0c3772;
+   margin: 0px 0px 0px 0px;
+   padding: 0px;
+}
+#secondary img.theme-logo {
+   margin: 2% 10%;
+   width: 80%;
+}
+#secondary {
+   padding: 14px;
+   width: 222px;
+   margin-top: 0px;
+}
+
+/* Styling polylang frontend stuff */
+/* The bilingual stuff */
+aside.widget.widget_polylang ul li.lang-item a {
+   color: #6a6a72;
+}
+aside.widget.widget_polylang ul li.lang-item.current-lang a {
+   color: white;
+}
+aside.widget.widget_polylang ul li.lang-item:hover {
+   border-color: #6592cf;
+}
+aside.widget.widget_polylang ul li.lang-item:hover a {
+   color: #6592cf;
+}
+
+aside.widget.widget_polylang {
+   min-height: 20px;
+   padding: 0px;
+   margin: 0 0 20px 0;
+}
+aside.widget.widget_polylang ul li {
+   width: 41%;
+   float: left;
+   border-radius: 5px;
+   border: 2px solid #6a6a72;
+   background-color: none;
+   padding: 0 1%;
+   margin: 1%;
+   text-align: center;
+}
+aside.widget.widget_polylang ul li.current-lang {
+   border: 2px solid #6592cf;
+}
+
+/* Default: site-title not floated */
+h1.site-title {
+   display: none;
+   float: none;
+   margin-left: 20px;
+}
+
+/* ======================================================================== */
+/* ======================================================================== */
+/* Hide search toogle */
+@media screen and (min-width: 594px) {
+   div.search-toggle { display: block; }
+   #current-css-resolution:after { content: "Resolution: 594px plus"; }
+}
+
+/* ======================================================================== */
+/* ======================================================================== */
+@media screen and (max-width: 782px) {
+   div#content { width: 100%; }
+   div.content-sidebar-2 { display: none; }
+   .primary-navigation {
+      float: right;
+   }
+}
+@media screen and (min-width: 783px) {
+
+   /* Show wordpress right sidebar with plugins and stuff.
+    * Therefore we have to shrink the content box. */
+   div.content-sidebar, .content-sidebar { width: 300px; margin-left: -320px; }
+   div.content-sidebar-10 { display: block; }
+   #current-css-resolution:after { content: "Resolution: 784px plus"; }
+   div#main-content.home-content div#content { margin-right: 320px; }
+   
+   /* site-title floated */
+   h1.site-title { display: block; float: left;}
+   /*nav#primary-navigation .wetterturnier-cities-menu ul { width: 100%; }*/
+
+   /* Widening content for full width pages */
+   div#content.full-width-page { margin: 0px; padding: 10px 0px; }
+
+   /* Hide a lot of elements */
+   li.wtnav-cities-big, aside#meta-2, aside#bbp_views_widget-2, aside#search-2
+   { display: none; }
+
+}
+
+/* ======================================================================== */
+/* ======================================================================== */
+@media screen and (min-width: 900px) {
+   div.content-sidebar, .content-sidebar { width: 300px; margin-left: -320px; }
+   #current-css-resolution:after { content: "Resolution: 900px plus"; }
+}
+
+/* ======================================================================== */
+/* ======================================================================== */
+@media screen and (max-width: 1007px) {
+   #content.site-content.forum-page { padding-left: 0 !important; }
+
+   ul.wt-linkcollection name {
+      display: inline;
+      width: 100%;
+   }
+}
+@media screen and (min-width: 1008px) {
+   div.content-sidebar, .content-sidebar { width: 300px; }
+   /* Show navigation on the left hand side instead of bottom down */
+   .site:before { width: 252px; }
+   /* Margin to the content */
+   #content.site-content.full-width-page { margin-left: 252px; }
+   /* Show logo */
+   #secondary:before { display: block; }
+   .site-content { margin-left: 252px; } 
+   /* Move 'page title' to the left */
+   div.header-main { margin-left: 250px; } 
+   li.wtnav-cities-small { display: none; }
+   li.wtnav-cities-big   { display: block; }
+   #current-css-resolution:after { content: "Resolution: 1008px plus"; }
+}
+/* ======================================================================== */
+/* ======================================================================== */
+@media screen and (min-width: 1080px) {
+   div.content-sidebar, .content-sidebar { width: 300px; }
+   /* Show wetterturnier logo */
+   .primary-navigation li:hover > a, .primary-navigation li.focus > a {
+      /* background-color: #3864a0; */
+      background-color: #FF6600;
+   }
+   /* Show navigation on the left hand side again */
+   div#secondary {
+      float: left; 
+      display: block;
+      width: 222px;
+      z-index: 20;
+   }
+   /* Show both index-page twocolumn divs, hide selection */
+   div#main-content.home-content div#content div.twocolumn-left,
+   div#main-content.home-content div#content div.twocolumn-right {
+      display: block;
+      width: 47%;
+   }
+   div#content.index-content .twocolumn-select {
+      display: none;
+   }
+   #current-css-resolution:after { content: "Resolution: 1080px plus"; }
+}
+
+/* ======================================================================== */
+/* ======================================================================== */
+@media screen and (min-width: 1800px) {
+   div#main-content.home-content div#content { margin-right: 320px; } 
+   div#content { margin-right: 320px; }
+   div.content-sidebar, .content-sidebar { width: 300px; }
+   div.content-sidebar {
+      display: block; 
+   }
+   #current-css-resolution:after { content: "Resolution: 1800px plus"; }
+}
+
+@media screen and (min-width: 1008px) {
+   .primary-sidebar { padding-top: 20px; }
+}
+
+
+/* ======================================================================== 
+ * Styling of the custom wetterturnier news thumbnail image 
+ * ======================================================================== */
+article.hentry {
+   margin-bottom: 5px;
+}
+.site-content .has-post-thumbnail .entry-header.list-post {
+   min-height: 130px;
+   width: -webkit-calc(98% - 200px);
+   width:    -moz-calc(98% - 200px);
+   width:         calc(98% - 200px);
+   margin-left: 200px;
+   margin-top: 0px;
+   padding: 0;
+}
+.site-content .entry-header .entry-meta {
+   max-width: 100%;
+}
+.site-content .entry-header.single-post .entry-meta {
+   padding: 10px 0;
+}
+.site-content .has-post-thumbnail .entry-header a.custom-news-thumbnail {
+   position: absolute;
+   top: 0;
+   left: -200px;
+   width: 180px;
+   height: 130px;
+   padding: 0; margin: 0;
+}
+.site-content .has-post-thumbnail .entry-header h1 {
+   margin: 0; padding: 0;
+}
+
+
+/* ======================================================================== 
+ * Styling of the news archive page
+ * ======================================================================== */
+#news-archive-link {
+   display: block;
+   width: 94%;
+   margin: 0 3%;
+}
+#news-archive-link span {
+   margin-left: 200px;
+   position: relative;
+}
+#news-archive-link span {
+   font-weight: bold;
+}
+#news-archive-link span a:before {
+   content: "";
+   position: relative;
+   top: 3px;
+   display: inline-block;
+   width: 19px;
+   height: 19px;
+   border-radius: 2px;
+   background-color: #FF6600;
+   margin-right: 5px;
+   background-image:url("icon-playbutton.svg");
+   background-position: center center;
+   background-size: 70%;
+   background-repeat: no-repeat;
+}
+
+#news-archive-wrapper article {
+   margin: 0;
+   padding: 0;
+}
+#news-archive-wrapper article a {
+   text-decoration: none;
+}
+.pagination.loop-pagination {
+   position: relative;
+}
+.pagination.loop-pagination a.next { position: absolute; right: 0; }
+.pagination.loop-pagination a.prev { position: absolute; left: 0; }
+.paging-navigation .page-numbers.current { border-color: #FF6600; }
+
+
+
+/* ======================================================================== 
+ * Bit of bbpress forum styling
+ * ======================================================================== */
+ul.bbp-replies > li > div {
+   padding: 0; margin: 0;
+
+}

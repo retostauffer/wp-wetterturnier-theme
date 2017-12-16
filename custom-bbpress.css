@@ -1,0 +1,66 @@
+
+
+/* ------------------------------------------------------------------
+ * Custom styling for the bbp-messages plugin
+ * --------------------------------------------------------------- */
+
+ul.bbpm-results li label {
+   display: block;
+   height: 45px;
+   font-size: 1.5em;   
+   position: relative;
+   padding: 15px 0 10px 0;
+   margin: 0;
+}
+ul.bbpm-results input {
+   display: block;
+   float: left;
+   position: relative;
+   top: 5px;
+   size: 2em;
+}
+ul.bbpm-results input[type='radio'] {
+   width: 15px;
+   height: 15px;
+}
+ul.bbpm-results img {
+   display: block;
+   float: left;
+   margin: 0px 10px;
+   width: 50px;
+   height: 50px;
+   position: relative;
+   top: -10px;
+}
+
+/* ------------------------------------------------------------------
+ * Custom styling for the bbp forum
+ * --------------------------------------------------------------- */
+
+.bbp-topics ul.super-sticky {
+   background-color: #ffd2b5 !important;
+}
+.bbp-topics ul.super-sticky .bbp-topic-title:before {
+   content: "[ !! ]";
+   font-weight: bold;
+   color: #ff6600;
+}
+.bbp-topics ul.sticky {
+   background-color: #eef0f2 !important;
+}
+.bbp-topics ul.sticky .bbp-topic-title:before {
+   content: "[ ! ]";
+   font-weight: bold;
+   color: #ff6600;
+}
+
+.bbp-topics ul.topic-tag-wetterbesprechung,
+.bbp-topics ul.topic-tag-wb {
+   background-color: #eafceb !important;
+}
+.bbp-topics ul.topic-tag-wetterbesprechung .bbp-topic-title:before,
+.bbp-topics ul.topic-tag-wb .bbp-topic-title:before {
+   content: "[WB]";
+   font-weight: bold;
+   color: #0e9311;
+}
