@@ -33,6 +33,29 @@ function register_custom_css_theme_file() {
 add_action('wp_enqueue_scripts','register_custom_css_theme_file');
 
 
+// ------------------------------------------------------------------
+/// Redirect user after successful login.
+///
+/// @param string $redirect_to URL to redirect to.
+/// @param string $request URL the user is coming from.
+/// @param object $user Logged user's data.
+/// @return string
+// ------------------------------------------------------------------
+function my_login_redirect( $redirect_to, $request, $user ) {
+   //is there a user to check?
+   if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+      //check for admins
+      if ( in_array( 'administrator', $user->roles ) ) {
+         // redirect them to the default place
+         return $redirect_to;
+      } else {
+         return home_url();
+      }
+   } else {
+      return $redirect_to;
+   }
+}
+add_filter( 'login_redirect', function( $url, $query, $user ) { return home_url(); }, 10, 3 );
 
 // ------------------------------------------------------------------
 /// @details Function called when shortcode [display_all_news] is used
