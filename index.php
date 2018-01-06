@@ -74,7 +74,7 @@ get_header(); ?>
             // Check if there are any valid rankings at the moment
             $current = $WTuser->current_tournament;
             $scored  = $WTuser->scored_players_per_town( $current->tdate );
-            print_r($scored);
+            ##print_r($scored);
             // No results for the current one? Well, take the one before!
             if ( ! $scored ) {
                $current = $WTuser->older_tournament( $current->tdate );
