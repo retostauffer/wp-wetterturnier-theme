@@ -61,6 +61,9 @@ get_header(); ?>
        		// If no content, include the "No posts found" template.
        		get_template_part( 'content', 'none' );
        	endif;
+
+         // Latest forum replies
+         shapeSpace_show_posts();
          ?>
 
          <article class="hentry">
@@ -71,6 +74,7 @@ get_header(); ?>
             // Check if there are any valid rankings at the moment
             $current = $WTuser->current_tournament;
             $scored  = $WTuser->scored_players_per_town( $current->tdate );
+            print_r($scored);
             // No results for the current one? Well, take the one before!
             if ( ! $scored ) {
                $current = $WTuser->older_tournament( $current->tdate );
@@ -84,6 +88,7 @@ get_header(); ?>
                //unused// print do_shortcode(sprintf("[wetterturnier_leaderboard city=%d limit=3 tdate=%d]",
                //unused//                   $city->ID,$current->tdate));
             }
+
             // City-ranking
             print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" limit=3 slim=false header=false tdate=%d]",
                                $current->tdate));
