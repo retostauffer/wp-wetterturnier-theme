@@ -1,8 +1,10 @@
 <?php
 #require get_stylesheet_directory() . '/inc/featured-content.php';
 
-# -------------------------------------------------------------------
-# -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+/// @details Custom header for twentyfourteen-child theme. 
+// -------------------------------------------------------------------
 function wpse_custom_header_setup() {
     add_theme_support( 'custom-header', apply_filters( 'wpse_header_args', array(
         'width'                  => 1600,
@@ -31,6 +33,15 @@ function register_custom_css_theme_file() {
    ////print_r($wp_styles);
 }
 add_action('wp_enqueue_scripts','register_custom_css_theme_file');
+
+
+// -------------------------------------------------------------------
+/// @details Adding a secondary child theme language file.
+// -------------------------------------------------------------------
+function twentyfourteen_child_language_file() {
+    load_child_theme_textdomain( 'tfchild', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'twentyfourteen_child_language_file' );
 
 
 // ------------------------------------------------------------------
@@ -127,11 +138,11 @@ function shapeSpace_show_posts() {
 	// Helper function
 	function get_timeinfo( $secs ) {
 		if ( ceil($secs/3600) <= 1 ) {
-			return sprintf(__("%d minutes ago","wpwt"),ceil($secs/60));
+			return sprintf(__("%d minutes ago","tfchild"),ceil($secs/60));
 		} else if ( ceil($secs/3600) < 2 ) {
-			return sprintf(__("an hour and %d minutes ago","wpwt"),ceil(($secs-3600)/60));
+			return sprintf(__("an hour and %d minutes ago","tfchild"),ceil(($secs-3600)/60));
 		} else {
-			return sprintf(__("%d hours ago","wpwt"),floor($secs/3600));
+			return sprintf(__("%d hours ago","tfchild"),floor($secs/3600));
 		}
 	}
 		
@@ -179,7 +190,7 @@ function shapeSpace_show_posts() {
 		</style>
 
 		<article class="hentry">
-      <h1 class="entry-title"><?php _e("Latest forum activity","wpwt"); ?></h1>
+      <h1 class="entry-title"><?php _e("Latest forum activity","tfchild"); ?></h1>
       <ul id="<?php print $cssclass; ?>">
       <?php while ($wp_query->have_posts() ) {
          $wp_query->the_post();
@@ -201,7 +212,7 @@ function shapeSpace_show_posts() {
 
 						// Oputput
 						printf("<span class=\"%s new topic\">%s: <a href=\"%s\">%s</a></span><br>",
-								$cssclass,__("New topic","wpwt"),get_the_permalink(),get_the_title());
+								$cssclass,__("New topic","tfchild"),get_the_permalink(),get_the_title());
 
 					} else {
 						
@@ -209,16 +220,16 @@ function shapeSpace_show_posts() {
 						$parent = get_the_title( (int)$post->post_parent );
 						// Oputput
 						printf("<span class=\"%s new reply\">%s <a href=\"%s\">%s</a></span><br>",
-								$cssclass,__("New reply on","wpwt"),get_the_permalink(),$parent);
+								$cssclass,__("New reply on","tfchild"),get_the_permalink(),$parent);
 
 					} ?>
 
 					<span class="<?php print $cssclass; ?> meta">
 					<?php printf("<span class=\"%s user\">%s %s</span>",
-							$cssclass,__("Created by","wpwt"),$author); ?>
+							$cssclass,__("Created by","tfchild"),$author); ?>
 					<?php printf("%s <b>%s</b> %s <b>%s (%s)</b>",
-							__("on","wpwt"),get_the_time("Y-m-d"),
-							__("at","wpwt"),get_the_time("H:i"),$timeinfo); ?>
+							__("on","tfchild"),get_the_time("Y-m-d"),
+							__("at","tfchild"),get_the_time("H:i"),$timeinfo); ?>
 					</span>
 
 				</li>
