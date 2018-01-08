@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: twentyfourteen-child translations\n"
-"POT-Creation-Date: 2018-01-07 10:03+0100\n"
-"PO-Revision-Date: 2018-01-07 10:09+0100\n"
+"POT-Creation-Date: 2018-01-08 14:51+0100\n"
+"PO-Revision-Date: 2018-01-08 14:51+0100\n"
 "Last-Translator: \n"
 "Language-Team: Reto Stauffer\n"
 "Language: de_DE\n"
@@ -16,19 +16,19 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bbpress\n"
 
-#: content.php:38 custom-news.php:38
+#: content.php:38 custom-news-small.php:22 custom-news.php:38
 msgid "Leave a comment"
 msgstr "Kommentar hinzufügen"
 
-#: content.php:38 custom-news.php:38
+#: content.php:38 custom-news-small.php:23 custom-news.php:38
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: content.php:38 custom-news.php:38
+#: content.php:38 custom-news-small.php:23 custom-news.php:38
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: content.php:42 custom-news.php:42
+#: content.php:42 custom-news-small.php:28 custom-news.php:42
 msgid "Edit"
 msgstr "Ändern"
 
@@ -41,42 +41,50 @@ msgstr "Weiterlesen %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: functions.php:141
+#: custom-news-small.php:32
+msgid "Continue reading"
+msgstr "Weiterlesen"
+
+#: functions.php:11
+msgid "Sticky"
+msgstr "Angeheftet"
+
+#: functions.php:162
 #, php-format
 msgid "%d minutes ago"
 msgstr "Vor %d Minuten"
 
-#: functions.php:143
+#: functions.php:164
 #, php-format
 msgid "an hour and %d minutes ago"
 msgstr "Einer Stunde und %d Minuten"
 
-#: functions.php:145
+#: functions.php:166
 #, php-format
 msgid "%d hours ago"
 msgstr "Vor %d Stunden"
 
-#: functions.php:193
+#: functions.php:214
 msgid "Latest forum activity"
 msgstr "Neueste Forumbeiträge"
 
-#: functions.php:215
+#: functions.php:236
 msgid "New topic"
 msgstr "Neues Thema"
 
-#: functions.php:223
+#: functions.php:244
 msgid "New reply on"
 msgstr "Neue Antwort auf"
 
-#: functions.php:229
+#: functions.php:250
 msgid "Created by"
 msgstr "Erstellt durch"
 
-#: functions.php:231
+#: functions.php:252
 msgid "on"
 msgstr "am"
 
-#: functions.php:232
+#: functions.php:253
 msgid "at"
 msgstr "um"
 
@@ -92,6 +100,14 @@ msgstr "Hauptnavigation"
 msgid "Skip to content"
 msgstr "Springe zum Inhalt"
 
-#: index.php:70
+#: index.php:58
+msgid "Latest News"
+msgstr "Aktuellste News"
+
+#: index.php:66
+msgid "Show older news"
+msgstr "Ältere News anzeigen"
+
+#: index.php:79
 msgid "Leaderboard"
 msgstr "Bestenliste"
