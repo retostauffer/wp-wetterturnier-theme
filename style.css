@@ -890,3 +890,56 @@ ul.bbp-replies > li > div {
    padding: 0; margin: 0;
 
 }
+
+/* ========================================================================
+ * Small news styling on front page
+ * ======================================================================== */
+ul#custom-news-small {
+   list-style: none;
+   margin: 0;
+}
+ul#custom-news-small li {
+   padding: 5px 10px;
+   border-left: 3px solid #CECECE;
+   margin-bottom: 5px;
+   line-height: .8em;
+   background-color: #eef0f2;
+	overflow: hidden;
+	padding-left: 120px;
+	position: relative;
+	line-height: 1.2em;
+}
+ul#custom-news-small li .entry-title {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	padding: 0; margin: 0;
+}
+ul#custom-news-small li .entry-meta {
+	padding: 0; margin: 0;
+	background-color: transparent;
+}
+ul#custom-news-small li .entry-meta {
+   margin: 0; padding: 0;
+	display: inline;
+	width: 100px;
+	height: auto;
+	margin: 0; padding: 0;
+	position: absolute;
+	top: 3px;
+	left: 5px;
+}
+ul#custom-news-small li .entry-meta span {
+	display: block;
+}
+ul#custom-news-small li.show-older-news {
+	background-color: transparent;
+	border-color: transparent;
+}
+ul#custom-news-small li span.meta {
+   margin: 0; padding: 0;
+   font-size: 0.8em;
+   line-height: 0.5em;
+   color: gray;
+}
+
+

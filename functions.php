@@ -1,7 +1,28 @@
 <?php
 #require get_stylesheet_directory() . '/inc/featured-content.php';
+#
+// ------------------------------------------------------------------
+/// @details Custom version of the main theme (twentyfourteen)
+/// post detail output function. Allows for an additional argument.
+/// @param fmt. String, format for output date.
+// ------------------------------------------------------------------
+function twentyfourteen_posted_on( $format = "F n Y" ) {
+   if ( is_sticky() && is_home() && ! is_paged() ) {
+      echo '<span class="featured-post">' . __( 'Sticky', 'twentyfourteen' ) . '</span>';
+   }
 
-
+   // Set up and print post meta information.
+   printf( '<span class="entry-date"><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$
+s">%3$s</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="%4$s"
+ rel="author">%5$s</a></span></span>',
+      esc_url( get_permalink() ),
+      esc_attr( get_the_date( 'c' ) ),
+      esc_html( get_the_date( $format ) ),
+      esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+      get_the_author()
+   );
+}
+ 
 // -------------------------------------------------------------------
 /// @details Custom header for twentyfourteen-child theme. 
 // -------------------------------------------------------------------
@@ -12,6 +33,7 @@ function wpse_custom_header_setup() {
     ) ) );
 
    add_image_size( 'custom-news-thumbnail', 180, 130, true ); // 
+   add_image_size( 'custom-news-small-thumbnail', 120, 50, true ); // 
    # Custom wordpress sidebar. Disabled right now as you can see.
    //register_sidebar( array(
    //   'name'          => __( 'WT Content Sidebar', 'twentyfourteen' ),
@@ -33,7 +55,6 @@ function register_custom_css_theme_file() {
    ////print_r($wp_styles);
 }
 add_action('wp_enqueue_scripts','register_custom_css_theme_file');
-
 
 // -------------------------------------------------------------------
 /// @details Adding a secondary child theme language file.

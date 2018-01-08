@@ -38,24 +38,33 @@ get_header(); ?>
       <div id="content" class="site-content index-content" role="main">
 
          <?php
-         query_posts('posts_per_page=2');
+         query_posts( array("posts_per_page" => 2) );
+			global $wp_query;
          if ( have_posts() ) :
-            //printf("<h1 class='entry-title extra-padding'>%s:</h1>\n",__("Latest News","wpwt"));
        	   // Start the Loop.
-       	   while ( have_posts() ) : the_post();
-
-               /* Include the post format-specific template for the content. If you want to
-                * use this in a child theme, then include a file called called content-___.php
-                * (where ___ is the post format) and that will be used instead.
-                */
-               get_template_part( 'custom-news', get_post_format() );
-
+				///$first_post = false; 
+       	   ///while ( have_posts() ) : the_post();
+				///	if ( $first_post ) {
+            ///   	get_template_part( 'custom-news', get_post_format() );
+				///		$first_post = false;
+				///		if ( $wp_query->found_posts > 1 ) { 
+				///			echo "<article class=\"hentry\">\n<ul id=\"custom-news-small\">\n";
+				///		}
+				///	} else {
+            ///   	get_template_part( 'custom-news-small', get_post_format() );
+				///	}
+            ///endwhile;
+            echo "<article class=\"hentry\">";
+			   printf("<h1 class=\"entry-title\">%s</h1>",__("Latest News","tfchild"));
+			   echo "<ul id=\"custom-news-small\">\n";
+            while ( have_posts() ) : the_post();
+               get_template_part( 'custom-news-small', get_post_format() );
             endwhile;
-            // Previous/next post navigation.
-            //twentyfourteen_paging_nav();
+				// Link to older news
             $lang = (function_exists('pll_current_language') ? pll_current_language('slug') : 'en');
-            printf("<div id='news-archive-link'><span><a href='/news%s/' target='_self'>%s</a></span></div>",
-                     $lang,($lang === "de" ? "&Auml;ltere News anzeigen" : "Show older news"));
+				printf("<li class=\"show-older-news\"><a href=\"/news%s/\" target=\"_self\">%s</a></li>",
+					$lang,__("Show older news","tfchild"));
+            echo "</ul>\n</article>\n";
 
        	else :
        		// If no content, include the "No posts found" template.
@@ -85,8 +94,6 @@ get_header(); ?>
             foreach ( $WTuser->get_all_cityObj() as $cityObj ) {
                print do_shortcode(sprintf("[wetterturnier_ranking type=\"weekend\" city=%d limit=3 slim=false header=false tdate=%d]",
                                  $cityObj->get("ID"),$current->tdate));
-               //unused// print do_shortcode(sprintf("[wetterturnier_leaderboard city=%d limit=3 tdate=%d]",
-               //unused//                   $city->ID,$current->tdate));
             }
 
             // City-ranking
