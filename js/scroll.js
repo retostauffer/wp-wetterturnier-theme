@@ -6,6 +6,8 @@ jQuery(document).on('ready',function() {
    $ = jQuery
    /// Relocate element
    function sticky_relocate() {
+       var dont = $(window).height() - $("#secondary #primary-sidebar").outerHeight();
+       if ( dont < 0 ) { return; }
        var window_top = $(window).scrollTop();
        var header_height = $('div.header-main').outerHeight();
        var div_top = $('#secondary').offset().top + $('img.theme-logo').height()
