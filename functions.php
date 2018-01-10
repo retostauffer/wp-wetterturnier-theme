@@ -1,6 +1,8 @@
 <?php
 #require get_stylesheet_directory() . '/inc/featured-content.php';
 #
+
+
 // ------------------------------------------------------------------
 /// @details Custom version of the main theme (twentyfourteen)
 /// post detail output function. Allows for an additional argument.
@@ -55,6 +57,17 @@ function register_custom_css_theme_file() {
    ////print_r($wp_styles);
 }
 add_action('wp_enqueue_scripts','register_custom_css_theme_file');
+
+/// @details Register custom child theme javascript file.
+function register_custom_js_theme_file() {
+    wp_enqueue_script(
+        'custom-child-theme-script',
+        get_stylesheet_directory_uri() . '/js/scroll.js',
+        array( 'jquery' )
+    );
+}
+
+add_action( 'wp_enqueue_scripts', 'register_custom_js_theme_file' );
 
 // -------------------------------------------------------------------
 /// @details Adding a secondary child theme language file.

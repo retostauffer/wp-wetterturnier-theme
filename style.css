@@ -942,4 +942,9 @@ ul#custom-news-small li span.meta {
    color: gray;
 }
 
-
+#primary-sidebar.stick {
+   position: fixed;
+   width: 350px;
+   top: 0;
+   z-index: 10000;
+}
