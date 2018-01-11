@@ -948,3 +948,6 @@ ul#custom-news-small li span.meta {
    top: 0;
    z-index: 10000;
 }
+#primary-sidebar.stick aside.widget_polylang {
+   visibility: hidden;
+}
