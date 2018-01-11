@@ -249,12 +249,13 @@ function shapeSpace_show_posts() {
 								$cssclass,__("New topic","tfchild"),get_the_permalink(),get_the_title());
 
 					} else {
-						
-						// Loading title of the parent topic
-						$parent = get_the_title( (int)$post->post_parent );
+
+                  // Getting topic
+                  $topic = get_post( $post->post_parent );
 						// Oputput
-						printf("<span class=\"%s new reply\">%s <a href=\"%s\">%s</a></span><br>",
-								$cssclass,__("New reply on","tfchild"),get_the_permalink(),$parent);
+						printf("<span class=\"%s new reply\">%s <a href=\"%s#post-%d\">%s</a></span><br>",
+                     	$cssclass,__("New reply on","tfchild"),$topic->guid,
+                     	$post->ID,$topic->post_title);
 
 					} ?>
 
