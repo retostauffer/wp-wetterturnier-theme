@@ -2,6 +2,30 @@
 #require get_stylesheet_directory() . '/inc/featured-content.php';
 #
 
+// ------------------------------------------------------------------
+/// Add Matomo (former piwik) tracking via retostauffer.org
+// ------------------------------------------------------------------
+function wetterturnier_matomo_tracking() { ?>
+
+   <script type="text/javascript">
+       var _paq = _paq || [];
+       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+       _paq.push(['trackPageView']);
+       _paq.push(['enableLinkTracking']);
+       (function() {
+         var u="//retostauffer.org/piwik/";
+         _paq.push(['setTrackerUrl', u+'piwik.php']);
+         _paq.push(['setSiteId', '4']);
+         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+       })();
+   </script>
+
+<?php }
+// Add hook for front-end <head></head>
+add_action('admin_head', 'wetterturnier_matomo_tracking');
+add_action('wp_head', 'wetterturnier_matomo_tracking');
+
 
 // ------------------------------------------------------------------
 /// @details Custom version of the main theme (twentyfourteen)
