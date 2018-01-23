@@ -6,19 +6,20 @@ jQuery(document).on('ready',function() {
    $ = jQuery
    /// Relocate element
    function sticky_relocate() {
+       // Dont make navigation sticky if vertical window height is too
+       // small. Users might then not see the lower part of the navigation at all.
        var dont = $(window).height() - $("#secondary #primary-sidebar").outerHeight();
        if ( dont < 0 ) { return; }
-       var window_top = $(window).scrollTop();
+       // Checking current scroll position
+       var window_top    = $(window).scrollTop();
        var header_height = $('div.header-main').outerHeight();
-       var div_top = $('#secondary').offset().top + $('img.theme-logo').height()
-             $('#primary-sidebar .widget_polylang').height() + header_height; 
-       console.log( window_top + "  header: " + header_height + "  div: " + div_top );
+       var div_top = $('#secondary').offset().top + $('img.theme-logo').height();
+       var left = parseInt($("#secondary").css("padding-left")) - $(window).scrollLeft();
        if (window_top > div_top) {
-           console.log('MAKE sticky');
            $('#primary-sidebar').addClass('stick')
-                  .css("width",$("#secondary").width());
+              .css("left", parseInt($("#secondary").css("padding-left")) - $(window).scrollLeft() )
+              .css("width",$("#secondary").width());
        } else {
-           console.log('REMOVE sticky');
            $('#primary-sidebar').removeClass('stick')
                   .css("width","100%");
        }
