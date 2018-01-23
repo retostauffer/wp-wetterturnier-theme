@@ -586,6 +586,8 @@ form.bbp-login-form {
    width: 100%;
 }
 
+body { background-color: white; }
+
 /* Table in show_leading output */
 table.wt-leading, table.wt-leading tbody tr, table.wt-leading * td,
 table.wt-leading, table.wt-leading thead tr, table.wt-leading * th {
