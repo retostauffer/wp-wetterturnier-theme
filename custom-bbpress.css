@@ -34,6 +34,31 @@ ul.bbpm-results img {
 }
 
 /* ------------------------------------------------------------------
+ * Custom styling of the bbpress content
+ * --------------------------------------------------------------- */
+div.bbp-reply-content ul:not(.bbp-reply-revision-log) li {
+   font-size: 1.4em;
+}
+
+div.bbp-reply-content blockquote {
+	font-size: 1em;
+   quotes: "\201C""\201D""\2018""\2019";
+	padding: 0em 2em; 
+	border 1px solid gray;
+	margin: 0;
+   margin-top: -3.5em;
+}
+div.bbp-reply-content blockquote:before {
+   position: relative;
+   left: -0.4em;
+   top: 0.7em;
+   color: #ff6600;
+   content: open-quote;
+   font-size: 8em;
+   line-height: 0;
+   vertical-align: 0em;
+}
+/* ------------------------------------------------------------------
  * Custom styling for the bbp forum
  * --------------------------------------------------------------- */
 
@@ -64,3 +89,5 @@ ul.bbpm-results img {
    font-weight: bold;
    color: #0e9311;
 }
+
+
