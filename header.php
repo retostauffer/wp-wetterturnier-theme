@@ -36,14 +36,30 @@
 	<?php wp_head(); ?>
     <script type='text/javascript'>
     jQuery(document).on('ready', function() {
-        // Just show or hide sub-menus
-        jQuery('li.menu-item-has-children').on('mouseover',function() {
-            jQuery( this ).children('ul.sub-menu' )
-                .show();
-        }).on('mouseleave',function() {
-            jQuery( this ).children('ul.sub-menu' )
-                .hide();
-        });
+
+        // Show extra button before <a> href in collapsed responsive menu
+        jQuery( "#secondary-topbar ul li.menu-item-has-children > a" )
+            .before( "<span class=\"menu-show-children collapsed\"></span>");
+
+        jQuery( "#secondary-topbar ul li span.menu-show-children" ).on( "click", function(e) {
+            e.stopImmediatePropagation();
+            if ( ! $(this).hasClass("expanded") ) {
+                $( this ).addClass("expanded");
+                $( this ).closest("li").children("ul.sub-menu").show();
+            } else {
+                $( this ).removeClass("expanded");
+                $( this ).closest("li").children("ul.sub-menu").hide();
+            }
+        }); 
+
+        //// Just show or hide sub-menus
+        //jQuery('li.menu-item-has-children').on('mouseover',function() {
+        //    jQuery( this ).children('ul.sub-menu' )
+        //        .show();
+        //}).on('mouseleave',function() {
+        //    jQuery( this ).children('ul.sub-menu' )
+        //        .hide();
+        //});
 
         // Show wordpress/phpbb login form 
         jQuery('.bbp_widget_login > h1').on('click',function() {

@@ -252,8 +252,24 @@ div#secondary-topbar ul li a {
    text-transform: uppercase;
 }
 div#secondary-topbar ul li ul {
-   display: block;
+   display: none;
    background-color: #1c1c1c;
+}
+
+div#secondary-topbar span.menu-show-children {
+    display: block;
+    float: left;
+    margin-left: 20px;
+    width: 25px;
+    height: 25px;
+    color: white;
+    background-image: url("icon-expandnav.svg");
+    background-size: 25px auto;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+div#secondary-topbar span.menu-show-children.expanded {
+    background-position: bottom left;
 }
 
 div.wetterturnier-cities-menu {
