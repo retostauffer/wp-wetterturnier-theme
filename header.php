@@ -52,14 +52,14 @@
             }
         }); 
 
-        //// Just show or hide sub-menus
-        //jQuery('li.menu-item-has-children').on('mouseover',function() {
-        //    jQuery( this ).children('ul.sub-menu' )
-        //        .show();
-        //}).on('mouseleave',function() {
-        //    jQuery( this ).children('ul.sub-menu' )
-        //        .hide();
-        //});
+        // Navigation for browser (not collapsed version)
+        jQuery('#primary-sidebar li.menu-item-has-children').on('mouseover',function() {
+            jQuery( this ).children('ul.sub-menu' )
+                .show();
+        }).on('mouseleave',function() {
+            jQuery( this ).children('ul.sub-menu' )
+                .hide();
+        });
 
         // Show wordpress/phpbb login form 
         jQuery('.bbp_widget_login > h1').on('click',function() {
