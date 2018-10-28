@@ -13,7 +13,7 @@ function wetterturnier_matomo_tracking() { ?>
        _paq.push(['trackPageView']);
        _paq.push(['enableLinkTracking']);
        (function() {
-         var u="//retostauffer.org/piwik/";
+	var u="https://retostauffer.org/piwik/";
          _paq.push(['setTrackerUrl', u+'piwik.php']);
          _paq.push(['setSiteId', '4']);
          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];

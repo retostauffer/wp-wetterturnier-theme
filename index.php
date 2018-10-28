@@ -28,10 +28,10 @@ get_header(); ?>
 <div id="main-content" class="main-content <?php print $divclass; ?>">
 
 <?php
-	if ( is_front_page() && twentyfourteen_has_featured_posts() ) {
-		// Include the featured content template.
-		get_template_part( 'featured-content' );
-	}
+    if ( is_front_page() && twentyfourteen_has_featured_posts() ) {
+        // Include the featured content template.
+        get_template_part( 'featured-content' );
+    }
 ?>
 
    <div id="primary" class="content-area">
@@ -39,37 +39,37 @@ get_header(); ?>
 
          <?php
          query_posts( array("posts_per_page" => 2) );
-			global $wp_query;
+            global $wp_query;
          if ( have_posts() ) :
-       	   // Start the Loop.
-				///$first_post = false; 
-       	   ///while ( have_posts() ) : the_post();
-				///	if ( $first_post ) {
-            ///   	get_template_part( 'custom-news', get_post_format() );
-				///		$first_post = false;
-				///		if ( $wp_query->found_posts > 1 ) { 
-				///			echo "<article class=\"hentry\">\n<ul id=\"custom-news-small\">\n";
-				///		}
-				///	} else {
-            ///   	get_template_part( 'custom-news-small', get_post_format() );
-				///	}
+           // Start the Loop.
+                ///$first_post = false; 
+           ///while ( have_posts() ) : the_post();
+                /// if ( $first_post ) {
+            ///     get_template_part( 'custom-news', get_post_format() );
+                ///     $first_post = false;
+                ///     if ( $wp_query->found_posts > 1 ) { 
+                ///         echo "<article class=\"hentry\">\n<ul id=\"custom-news-small\">\n";
+                ///     }
+                /// } else {
+            ///     get_template_part( 'custom-news-small', get_post_format() );
+                /// }
             ///endwhile;
             echo "<article class=\"hentry\">";
-			   printf("<h1 class=\"entry-title\">%s</h1>",__("Latest News","tfchild"));
-			   echo "<ul id=\"custom-news-small\">\n";
+               printf("<h1 class=\"entry-title\">%s</h1>",__("Latest News","tfchild"));
+               echo "<ul id=\"custom-news-small\">\n";
             while ( have_posts() ) : the_post();
                get_template_part( 'custom-news-small', get_post_format() );
             endwhile;
-				// Link to older news
+                // Link to older news
             $lang = (function_exists('pll_current_language') ? pll_current_language('slug') : 'en');
-				printf("<li class=\"show-older-news\"><a href=\"/news%s/\" target=\"_self\">%s</a></li>",
-					$lang,__("Show older news","tfchild"));
+                printf("<li class=\"show-older-news\"><a href=\"/news%s/\" target=\"_self\">%s</a></li>",
+                    $lang,__("Show older news","tfchild"));
             echo "</ul>\n</article>\n";
 
-       	else :
-       		// If no content, include the "No posts found" template.
-       		get_template_part( 'content', 'none' );
-       	endif;
+        else :
+            // If no content, include the "No posts found" template.
+            get_template_part( 'content', 'none' );
+        endif;
 
          // Latest forum replies
          shapeSpace_show_posts();
@@ -92,8 +92,9 @@ get_header(); ?>
             //$cities = $WTuser->get_city_data();
             //foreach ( $cities as $city ) {
             foreach ( $WTuser->get_all_cityObj() as $cityObj ) {
-               print do_shortcode(sprintf("[wetterturnier_ranking type=\"weekend\" city=%d limit=3 slim=false header=false tdate=%d]",
-                                 $cityObj->get("ID"),$current->tdate));
+                print do_shortcode(sprintf("[wetterturnier_ranking type=\"weekend\" city=%d "
+                                           ."limit=3 slim=false header=false tdate=%d]",
+                                           $cityObj->get("ID"),$current->tdate));
             }
 
             // City-ranking
