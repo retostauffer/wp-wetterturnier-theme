@@ -83,7 +83,7 @@ get_header(); ?>
             // Check if there are any valid rankings at the moment
             $current = $WTuser->current_tournament;
             $scored  = $WTuser->scored_players_per_town( $current->tdate );
-            ##print_r($scored);
+
             // No results for the current one? Well, take the one before!
             if ( ! $scored ) {
                $current = $WTuser->older_tournament( $current->tdate );
@@ -93,15 +93,15 @@ get_header(); ?>
             //foreach ( $cities as $city ) {
             foreach ( $WTuser->get_all_cityObj() as $cityObj ) {
                 print do_shortcode(sprintf("[wetterturnier_ranking type=\"weekend\" city=%d "
-                                           ."limit=3 slim=false header=false tdate=%d]",
+                                           ."limit=5 slim=false header=false tdate=%d]",
                                            $cityObj->get("ID"),$current->tdate));
             }
 
             // City-ranking
-            print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" limit=3 slim=false header=false tdate=%d]",
+            print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" city=\"1:2:3\" limit=3 slim=false header=false tdate=%d]",
                                $current->tdate));
-            print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" cities=\"1,2,3,4,5\" limit=3 slim=false header=false tdate=%d]",
-                               $current->tdate));
+            //////print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" cities=\"1,2,3,4,5\" limit=3 slim=false header=false tdate=%d]",
+            //////                   $current->tdate));
             ?>
          </article>
          </div>
