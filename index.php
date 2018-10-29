@@ -93,13 +93,14 @@ get_header(); ?>
             //foreach ( $cities as $city ) {
             foreach ( $WTuser->get_all_cityObj() as $cityObj ) {
                 print do_shortcode(sprintf("[wetterturnier_ranking type=\"weekend\" city=%d "
+                                           ."hidebuttons=true "
                                            ."limit=5 slim=false header=false tdate=%d]",
                                            $cityObj->get("ID"),$current->tdate));
             }
 
             // City-ranking
-            print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" city=\"1:2:3\" limit=3 slim=false header=false tdate=%d]",
-                               $current->tdate));
+            ///print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" city=\"1:2:3\" limit=3 slim=false header=false tdate=%d]",
+            ///                   $current->tdate));
             //////print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" cities=\"1,2,3,4,5\" limit=3 slim=false header=false tdate=%d]",
             //////                   $current->tdate));
             ?>
