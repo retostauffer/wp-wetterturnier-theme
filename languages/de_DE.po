@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: twentyfourteen-child translations\n"
-"POT-Creation-Date: 2018-01-08 14:51+0100\n"
-"PO-Revision-Date: 2018-01-08 14:51+0100\n"
+"POT-Creation-Date: 2018-11-01 10:51+0100\n"
+"PO-Revision-Date: 2018-11-01 10:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: Reto Stauffer\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
@@ -45,58 +45,62 @@ msgstr "Seiten:"
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
-#: functions.php:11
+#: functions.php:37
 msgid "Sticky"
 msgstr "Angeheftet"
 
-#: functions.php:162
+#: functions.php:199
 #, php-format
 msgid "%d minutes ago"
 msgstr "Vor %d Minuten"
 
-#: functions.php:164
+#: functions.php:201
 #, php-format
 msgid "an hour and %d minutes ago"
 msgstr "Einer Stunde und %d Minuten"
 
-#: functions.php:166
+#: functions.php:203
 #, php-format
 msgid "%d hours ago"
 msgstr "Vor %d Stunden"
 
-#: functions.php:214
+#: functions.php:251
 msgid "Latest forum activity"
 msgstr "Neueste Forumbeiträge"
 
-#: functions.php:236
+#: functions.php:273
 msgid "New topic"
 msgstr "Neues Thema"
 
-#: functions.php:244
+#: functions.php:281
 msgid "New reply on"
 msgstr "Neue Antwort auf"
 
-#: functions.php:250
+#: functions.php:288
 msgid "Created by"
 msgstr "Erstellt durch"
 
-#: functions.php:252
+#: functions.php:290
 msgid "on"
 msgstr "am"
 
-#: functions.php:253
+#: functions.php:291
 msgid "at"
 msgstr "um"
 
-#: header.php:137
+#: header.php:119
+msgid "Accept GDPR privacy policy"
+msgstr "Akzeptiere Datenschutzrichtlinien"
+
+#: header.php:192
 msgid "Search"
 msgstr "Suche"
 
-#: header.php:141
+#: header.php:196
 msgid "Primary Menu"
 msgstr "Hauptnavigation"
 
-#: header.php:142
+#: header.php:197
 msgid "Skip to content"
 msgstr "Springe zum Inhalt"
 

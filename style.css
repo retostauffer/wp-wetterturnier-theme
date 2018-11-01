@@ -35,7 +35,7 @@ nav#primary-navigation { padding-top: 0px; }
 
 /* For mobile phones and shit: remove second sidebar */
 /* if window width is not maximum */
-div.content-sidebar, .content-sidebar {
+.content-sidebar, .content-sidebar {
    display: none;
    width: 320px;
    right: 5px;
@@ -297,8 +297,8 @@ div.wetterturnier-cities-menu {
    Also defines the styling of the form when wp_login_form()
    is called.
 -------------------------------------------------------------- */
-div#logout-topbar, div#login-topbar {
-   display: block;
+#logout-topbar, #login-topbar {
+   display: none;
    position: absolute;
    left: 50px;
    top: 0px;
@@ -319,7 +319,7 @@ div#logout-topbar, div#login-topbar {
    Also defines the styling of the form when wp_login_form()
    is called.
 -------------------------------------------------------------- */
-div#login-cities-menu {
+#login-cities-menu {
    display: block;
    position: relative;
    width: 50px;
@@ -329,15 +329,23 @@ div#login-cities-menu {
    background-size: auto 60%;
    background-image: url('login-topbar.svg');
 }
-div#login-cities-menu:hover { background-color: #FF6600; }
+#login-cities-menu:hover { background-color: #FF6600; }
 
-/* For the login-forms not in the top navigation bar */
-form[name='loginform'] {
+/* For the login-forms not in the top navigation bar.
+ * They are not visible in the beginning before the user
+ * clicks the "accept gdpr" button (opt in). */
+#topbar-login, #cities-menu-login {
+   display: none;
    width: 300px;
-   padding: 2em 0;
+   padding: 0 0;
+   margin-top: 1.5em;
+}
+/* Also hide the fieldset bbpress login forms */
+.bbp-login-form fieldset {
+   display: none;
 }
 /* For the login-form in the top navigation bar */
-#login-cities-menu form[name='loginform'], #login-topbar form[name='loginform'] {
+#login-topbar > div, #login-cities-menu > div {
    display: none;
    position: relative;
    top: 100%;
@@ -346,44 +354,88 @@ form[name='loginform'] {
    background-color: #0c3772;
    color: white;
 }
-#login-topbar form[name='loginform'] {
+#login-topbar > div {
    left: 0px;
 }
-#login-cities-menu form[name='loginform'] {
+#login-cities-menu div {
    right: 290px;
 }
-form[name='loginform'] p {
-   margin-bottom: 4px;
-}
-form[name='loginform'] input[type='password'],
-form[name='loginform'] input[type='text'], {
-   width: 100%;
-}
-form[name='loginform'] label {
+#topbar-login label, #cities-menu-login label {
    display: block;
    float: none;
 }
-form[name='loginform'] > p.login-submit {
+#topbar-user_pass, #topbar-user_login,
+#cities-menu-user_pass, #cities-menu-user_login {
+   width: 100%;
+}
+#topbar-login .login-submit, #cities-menu-login .login-submit {
    padding: 0;
    margin: 0;
 }
-form[name='loginform'] > p.login-submit > input[type='submit'] {
+.topbar-submit, .cities-menu-submit {
    margin: 0;
    width: 100%;
 }
-form[name='loginform'] > a {
+.topbar-submit input, .cities-menu-submit input {
+    padding: 0;
+}
+#topbar-login a, #cities-menu-login a {
    display: block;
    width: 100%;
    height: 100%;
    cursor: pointer;
 }
+#topbar-login input[type="checkbox"],
+#cities-menu-login input[type="checkbox"] {
+    display: inline;
+    width: 1.2em;
+    height: 1.2em;
+}
 
 @media screen and (max-width: 1007px) {
-   div#logout-topbar, div#login-topbar {
+   #logout-topbar, #login-topbar {
       display: block;
    }
-   div#login-cities-menu { display: none; }
+   #login-cities-menu { display: none; }
 }
+
+/* --------------------------------------------------------------
+   The "accept GDPA" div
+-------------------------------------------------------------- */
+.wt-gdpr {
+    display: block;
+    width: 90%;
+    padding: .5em 2em;
+    margin: -.2em 0em 1em 0em;
+    padding: 0; margin: 0;
+    width: 100%;
+    background-color: #FF6600;
+    border-radius: 5px;
+    margin-bottom: .5em;
+    cursor: pointer;
+}
+.wt-gdpr > span {
+    position: relative;
+    display: block;
+    padding: 1em;
+}
+.wt-gdpr > span > a {
+    display: block;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    right: 1.2em;
+    top: .7em;
+    width: 2em;
+    height: 2em;
+    background-image: url('outlink.svg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.wt-gdpr:hover  { color: black; }
+.wt-gdpr.agreed { background-color: #41a62a; }
+
 
 /* --------------------------------------------------------------
    Theme customization starts here
