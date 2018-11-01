@@ -333,7 +333,7 @@ div.wetterturnier-cities-menu {
 
 /* For the login-forms not in the top navigation bar.
  * They are not visible in the beginning before the user
- * clicks the "accept gdpr" button (opt in). */
+ * clicks the "accept dsgvo" button (opt in). */
 #topbar-login, #cities-menu-login {
    display: none;
    width: 300px;
@@ -402,7 +402,7 @@ div.wetterturnier-cities-menu {
 /* --------------------------------------------------------------
    The "accept GDPA" div
 -------------------------------------------------------------- */
-.wt-gdpr {
+.wt-dsgvo {
     display: block;
     width: 90%;
     padding: .5em 2em;
@@ -414,12 +414,12 @@ div.wetterturnier-cities-menu {
     margin-bottom: .5em;
     cursor: pointer;
 }
-.wt-gdpr > span {
+.wt-dsgvo > span {
     position: relative;
     display: block;
     padding: 1em;
 }
-.wt-gdpr > span > a {
+.wt-dsgvo > span > a {
     display: block;
     position: absolute;
     padding: 0;
@@ -433,8 +433,8 @@ div.wetterturnier-cities-menu {
     background-size: 100%;
     background-repeat: no-repeat;
 }
-.wt-gdpr:hover  { color: black; }
-.wt-gdpr.agreed { background-color: #41a62a; }
+.wt-dsgvo:hover  { color: black; }
+.wt-dsgvo.agreed { background-color: #41a62a; }
 
 
 /* --------------------------------------------------------------

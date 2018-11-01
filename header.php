@@ -115,17 +115,17 @@ console.log("show hide")
         // Disable login form, force the user to enable the form by accepting
         // the GPDR privacy statement.
         <?php
-        $gdpr = sprintf("%s <a href='/%s' target='_self'></a>",
-            __("Accept GDPR privacy policy", "tfchild"), "gdpr");
+        $dsgvo = sprintf("%s <a href='/%s' target='_self'></a>",
+            __("Accept GDPR privacy policy", "tfchild"), "dsgvo");
         ?>
         $.each($("form.bbp-login-form, #login-cities-menu > div, #login-topbar > div"), function() {
-            var gdpr = "<div class=\"wt-gdpr\"><span><?php print $gdpr; ?></span></div>";
-            $(this).prepend(gdpr);
+            var dsgvo = "<div class=\"wt-dsgvo\"><span><?php print $dsgvo; ?></span></div>";
+            $(this).prepend(dsgvo);
         });
-        $(".wt-gdpr a").on("click", function(event) { event.stopPropagation(); });
+        $(".wt-dsgvo a").on("click", function(event) { event.stopPropagation(); });
 
-        // Add interactivity to the .wt-gdpr buttons
-        $(".wt-gdpr").on("click", function(event) {
+        // Add interactivity to the .wt-dsgvo buttons
+        $(".wt-dsgvo").on("click", function(event) {
             console.log($(this))
             console.log($(this).hasClass("agreed"))
             if ( $(this).hasClass("agreed") ) {
