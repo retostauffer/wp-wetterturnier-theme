@@ -340,6 +340,14 @@ div.wetterturnier-cities-menu {
    padding: 0 0;
    margin-top: 1.5em;
 }
+/* Hide "restricted access login form" */
+#login-restricted > form {
+    display: none;
+}
+#login-restricted > form label {
+    display: inline-block;
+    width: 250px;
+}
 /* Also hide the fieldset bbpress login forms */
 .bbp-login-form fieldset {
    display: none;
@@ -428,13 +436,26 @@ div.wetterturnier-cities-menu {
     top: .7em;
     width: 2em;
     height: 2em;
-    background-image: url('outlink.svg');
+    background-image: url('dsgvo_info.svg');
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
 }
 .wt-dsgvo:hover  { color: black; }
 .wt-dsgvo.agreed { background-color: #41a62a; }
+.wt-dsgvo icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    background-image: url("dsgvo_icon.svg");
+    background-size: 1em auto;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+.wt-dsgvo.agreed icon {
+    background-position: bottom left;
+}
 
 
 /* --------------------------------------------------------------

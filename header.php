@@ -98,7 +98,6 @@
         // and the login-cities-menu login form.
         jQuery("#login-topbar, #login-cities-menu").on("click",function() {
            var stat = jQuery(this).children("div").css("display");
-console.log("show hide")
            if ( stat === "none" ) {
               $(this).children("div").fadeIn()
            } else {
@@ -115,10 +114,10 @@ console.log("show hide")
         // Disable login form, force the user to enable the form by accepting
         // the GPDR privacy statement.
         <?php
-        $dsgvo = sprintf("%s <a href='/%s' target='_self'></a>",
+        $dsgvo = sprintf("<icon></icon> %s <a href='/%s' target='_self'></a>",
             __("Accept GDPR privacy policy", "tfchild"), "dsgvo");
         ?>
-        $.each($("form.bbp-login-form, #login-cities-menu > div, #login-topbar > div"), function() {
+        $.each($("form.bbp-login-form, #login-cities-menu > div, #login-topbar > div, #login-restricted"), function() {
             var dsgvo = "<div class=\"wt-dsgvo\"><span><?php print $dsgvo; ?></span></div>";
             $(this).prepend(dsgvo);
         });
