@@ -2,6 +2,33 @@
 #require get_stylesheet_directory() . '/inc/featured-content.php';
 #
 
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '120' );
+
+// Disable automatic WordPress plugin updates:	
+add_filter( 'auto_update_plugin', '__return_false' );
+
+// Disable automatic WordPress theme updates:
+add_filter( 'auto_update_theme', '__return_false' );
+
+/* Disable XMLRPC */
+add_filter( 'xmlrpc_enabled', '__return_false' );
+
+/* Disable image conversion introduced in Wordpress 5.4*/
+//add_filter( 'big_image_size_threshold', '__return_false' );
+
+/* Den HTTP-Header vom XMLRPC-Eintrag bereinigen */
+add_filter( 'wp_headers', 'AH_remove_x_pingback' );
+ function AH_remove_x_pingback( $headers )
+ {
+ unset( $headers['X-Pingback'] );
+ return $headers;
+ }
+
+/* Remove XMLRPC, WLW, Generator and ShortLink tags from header */
+remove_action('wp_head', 'rsd_link');
+
 // ------------------------------------------------------------------
 /// Add Matomo (former piwik) tracking via retostauffer.org
 // ------------------------------------------------------------------
@@ -110,6 +137,7 @@ add_action( 'after_setup_theme', 'twentyfourteen_child_language_file' );
 /// @param object $user Logged user's data.
 /// @return string
 // ------------------------------------------------------------------
+/**
 function my_login_redirect( $redirect_to, $request, $user ) {
    //is there a user to check?
    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
@@ -124,7 +152,9 @@ function my_login_redirect( $redirect_to, $request, $user ) {
       return $redirect_to;
    }
 }
+
 add_filter( 'login_redirect', function( $url, $query, $user ) { return home_url(); }, 10, 3 );
+*/
 
 // ------------------------------------------------------------------
 /// @details Function called when shortcode [display_all_news] is used

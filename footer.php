@@ -10,9 +10,9 @@
  */
 ?>
 
-		</div><!-- #main -->
+         </div><!-- #main -->
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
+	 <footer id="colophon" class="site-footer" role="contentinfo">
 
          <?php
          // Theme url (need to append -child)
@@ -47,12 +47,6 @@
          <logo>
             <a href="http://www.ubimet.com/" target="_new">
             <img src="<?php print $theme_uri; ?>/logo_ubimet.png" />
-            </a>
-            <h1>Documents and Prices</h1>
-         </logo>
-         <logo>
-            <a href="http://www.wetterspiegel.de/" target="_new">
-            <img src="<?php print $theme_uri; ?>/logo_wetterspiegel.png" />
             </a>
             <h1>Documents and Prices</h1>
          </logo>
