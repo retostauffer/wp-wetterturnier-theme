@@ -15,9 +15,6 @@ add_filter( 'auto_update_theme', '__return_false' );
 /* Disable XMLRPC */
 add_filter( 'xmlrpc_enabled', '__return_false' );
 
-/* Disable image conversion introduced in Wordpress 5.4*/
-//add_filter( 'big_image_size_threshold', '__return_false' );
-
 /* Den HTTP-Header vom XMLRPC-Eintrag bereinigen */
 add_filter( 'wp_headers', 'AH_remove_x_pingback' );
  function AH_remove_x_pingback( $headers )
@@ -128,6 +125,26 @@ function twentyfourteen_child_language_file() {
 }
 add_action( 'after_setup_theme', 'twentyfourteen_child_language_file' );
 
+/*
+//enable tab indentation in wordpress html editor
+if( !function_exists('mr_tab_to_indent_in_textarea') ){
+function mr_tab_to_indent_in_textarea() {
+      $tabindent = '<script>
+      jQuery(function($) {
+         $("textarea#content, textarea#wp_mce_fullscreen").keydown(function(e){  
+            if( e.keyCode != 9 ) return;
+            e.preventDefault();
+            var textarea = $(this)[0], start = textarea.selectionStart, before = textarea.value.substring(0, start), after = textarea.value.substring(start, textarea.value.length);
+            textarea.value = before + "\t" + after; textarea.setSelectionRange(start+1,start+1);  
+         });
+      });</script>';
+      echo $tabindent;
+   }
+ 
+   add_action('admin_footer-post-new.php', 'mr_tab_to_indent_in_textarea');
+   add_action('admin_footer-post.php', 'mr_tab_to_indent_in_textarea');
+}
+ */
 
 // ------------------------------------------------------------------
 /// Redirect user after successful login.
@@ -333,5 +350,6 @@ function shapeSpace_show_posts() {
 	<?php } ?>
 		
 <?php }
-
+/* Disable image conversion introduced in Wordpress 5.4*/
+add_filter( 'big_image_size_threshold', '__return_false' );
 ?>

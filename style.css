@@ -35,8 +35,9 @@ nav#primary-navigation { padding-top: 0px; }
 
 /* For mobile phones and shit: remove second sidebar */
 /* if window width is not maximum */
+
 div.content-sidebar, .content-sidebar {
-   display: none;
+   // display: none;
    width: 320px;
    right: 5px;
    padding: 40px 10px;
@@ -723,13 +724,16 @@ h1.site-title {
 
 /* ======================================================================== */
 /* ======================================================================== */
+
 @media screen and (max-width: 782px) {
    div#content { width: 100%; }
-   div.content-sidebar-2 { display: none; }
+   // div.content-sidebar-2 { display: none; }
    .primary-navigation {
       float: right;
    }
 }
+
+
 @media screen and (min-width: 783px) {
 
    /* Show wordpress right sidebar with plugins and stuff.
@@ -754,6 +758,7 @@ h1.site-title {
 
 /* ======================================================================== */
 /* ======================================================================== */
+
 @media screen and (min-width: 900px) {
    div.content-sidebar, .content-sidebar { width: 300px; margin-left: -320px; }
    #current-css-resolution:after { content: "Resolution: 900px plus"; }
