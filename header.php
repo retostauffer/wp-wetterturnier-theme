@@ -38,6 +38,13 @@
     
     // detect screen resolution and save it to cookies. Can later be used by calling $_get['width'] or $_get['height'] in PHP
     //window.location.href = "wp-content/plugins/wp-wetterturnier/user/widgets/windy.php?width=" + screen.width + "&height=" + screen.height;
+    // save window width for windy widget
+    if (document.cookie.split(';').filter(function(item) {
+    return item.trim().indexOf('windowindow_width=') != 0
+    }).length) {
+       var ww = window.innerWidth;
+       document.cookie = "window_width = " + ww
+    }
 
     jQuery(document).on('ready', function() {
 
@@ -180,4 +187,3 @@
     </header>
 
     <div id="main" class="site-main">
-

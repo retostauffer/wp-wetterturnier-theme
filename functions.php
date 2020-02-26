@@ -350,6 +350,6 @@ function shapeSpace_show_posts() {
 	<?php } ?>
 		
 <?php }
-/* Disable image conversion introduced in Wordpress 5.4*/
+/* Disable image conversion introduced in Wordpress 5.3*/
 add_filter( 'big_image_size_threshold', '__return_false' );
 ?>
