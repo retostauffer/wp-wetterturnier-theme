@@ -1,6 +1,39 @@
-<?php
+<?php ob_start();
 #require get_stylesheet_directory() . '/inc/featured-content.php';
 #
+
+/* Disable XMLRPC */
+add_filter( 'xmlrpc_enabled', '__return_false' );
+
+/* Den HTTP-Header vom XMLRPC-Eintrag bereinigen */
+add_filter( 'wp_headers', 'AH_remove_x_pingback' );
+ function AH_remove_x_pingback( $headers )
+ {
+ unset( $headers['X-Pingback'] );
+ return $headers;
+ }
+
+/* Remove XMLRPC, WLW, Generator and ShortLink tags from header */
+remove_action('wp_head', 'rsd_link');
+
+/* this function gets executed during login */
+function login_actions() {
+    $_SESSION["wetterturnier_city"] = get_user_option("wt_default_city");
+}
+
+add_action('wp_login', 'login_actions');
+
+/* automatic session reset */
+function logout_actions($userID) {
+	$sessions->destroy_all();//destroys all sessions
+	//wp_clear_auth_cookie();//clears cookies regarding WP Auth
+	delete_option( "wt_city_userid_" . (string)$userID );
+}
+
+// use anonymous function to pass current userID to logout_actions()
+$userID = get_current_user_id();
+add_action('wp_logout', function() { global $userID; logout_actions($userID); }, 10, 1);
+
 
 // ------------------------------------------------------------------
 /// Add Matomo (former piwik) tracking via retostauffer.org
@@ -110,6 +143,7 @@ add_action( 'after_setup_theme', 'twentyfourteen_child_language_file' );
 /// @param object $user Logged user's data.
 /// @return string
 // ------------------------------------------------------------------
+/**
 function my_login_redirect( $redirect_to, $request, $user ) {
    //is there a user to check?
    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
@@ -124,7 +158,9 @@ function my_login_redirect( $redirect_to, $request, $user ) {
       return $redirect_to;
    }
 }
+
 add_filter( 'login_redirect', function( $url, $query, $user ) { return home_url(); }, 10, 3 );
+*/
 
 // ------------------------------------------------------------------
 /// @details Function called when shortcode [display_all_news] is used
@@ -303,5 +339,4 @@ function shapeSpace_show_posts() {
 	<?php } ?>
 		
 <?php }
-
-?>
+ob_end_clean();
