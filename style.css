@@ -35,8 +35,8 @@ nav#primary-navigation { padding-top: 0px; }
 
 /* For mobile phones and shit: remove second sidebar */
 /* if window width is not maximum */
-.content-sidebar, .content-sidebar {
-   display: none;
+div.content-sidebar, .content-sidebar {
+   // display: none;
    width: 320px;
    right: 5px;
    padding: 40px 10px;
@@ -297,8 +297,8 @@ div.wetterturnier-cities-menu {
    Also defines the styling of the form when wp_login_form()
    is called.
 -------------------------------------------------------------- */
-#logout-topbar, #login-topbar {
-   display: none;
+div#logout-topbar, div#login-topbar {
+   display: block;
    position: absolute;
    left: 50px;
    top: 0px;
@@ -319,7 +319,7 @@ div.wetterturnier-cities-menu {
    Also defines the styling of the form when wp_login_form()
    is called.
 -------------------------------------------------------------- */
-#login-cities-menu {
+div#login-cities-menu {
    display: block;
    position: relative;
    width: 50px;
@@ -329,31 +329,16 @@ div.wetterturnier-cities-menu {
    background-size: auto 60%;
    background-image: url('login-topbar.svg');
 }
-#login-cities-menu:hover { background-color: #FF6600; }
+div#login-cities-menu:hover { background-color: #FF6600; }
 
-/* For the login-forms not in the top navigation bar.
- * They are not visible in the beginning before the user
- * clicks the "accept dsgvo" button (opt in). */
-#topbar-login, #cities-menu-login {
-   display: none;
+/* For the login-forms not in the top navigation bar. */
+form[name='loginform'] {
    width: 300px;
-   padding: 0 0;
-   margin-top: 1.5em;
+   padding: 2em 0;
 }
-/* Hide "restricted access login form" */
-#login-restricted > form {
-    display: none;
-}
-#login-restricted > form label {
-    display: inline-block;
-    width: 250px;
-}
-/* Also hide the fieldset bbpress login forms */
-.bbp-login-form fieldset {
-   display: none;
-}
+
 /* For the login-form in the top navigation bar */
-#login-topbar > div, #login-cities-menu > div {
+#login-cities-menu form[name='loginform'], #login-topbar form[name='loginform'] {
    display: none;
    position: relative;
    top: 100%;
@@ -362,32 +347,33 @@ div.wetterturnier-cities-menu {
    background-color: #0c3772;
    color: white;
 }
-#login-topbar > div {
+#login-topbar form[name='loginform'] {
    left: 0px;
 }
-#login-cities-menu div {
+#login-cities-menu form[name='loginform'] {
    right: 290px;
 }
-#topbar-login label, #cities-menu-login label {
+form[name='loginform'] p {
+   margin-bottom: 4px;
+}
+form[name='loginform'] input[type='password'],
+form[name='loginform'] input[type='text'], {
+   width: 100%;
+}
+form[name='loginform'] label {
    display: block;
    float: none;
 }
-#topbar-user_pass, #topbar-user_login,
-#cities-menu-user_pass, #cities-menu-user_login {
-   width: 100%;
-}
-#topbar-login .login-submit, #cities-menu-login .login-submit {
+
+form[name='loginform'] > p.login-submit {
    padding: 0;
    margin: 0;
 }
-.topbar-submit, .cities-menu-submit {
+form[name='loginform'] > p.login-submit > input[type='submit'] {
    margin: 0;
    width: 100%;
 }
-.topbar-submit input, .cities-menu-submit input {
-    padding: 0;
-}
-#topbar-login a, #cities-menu-login a {
+form[name='loginform'] > a {
    display: block;
    width: 100%;
    height: 100%;
@@ -401,60 +387,10 @@ div.wetterturnier-cities-menu {
 }
 
 @media screen and (max-width: 1007px) {
-   #logout-topbar, #login-topbar {
+   div#logout-topbar, div#login-topbar {
       display: block;
    }
-   #login-cities-menu { display: none; }
-}
-
-/* --------------------------------------------------------------
-   The "accept GDPA" div
--------------------------------------------------------------- */
-.wt-dsgvo {
-    display: block;
-    width: 90%;
-    padding: .5em 2em;
-    margin: -.2em 0em 1em 0em;
-    padding: 0; margin: 0;
-    width: 100%;
-    background-color: #FF6600;
-    border-radius: 5px;
-    margin-bottom: .5em;
-    cursor: pointer;
-}
-.wt-dsgvo > span {
-    position: relative;
-    display: block;
-    padding: 1em;
-}
-.wt-dsgvo > span > a {
-    display: block;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    right: 1.2em;
-    top: .7em;
-    width: 2em;
-    height: 2em;
-    background-image: url('dsgvo_info.svg');
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.wt-dsgvo:hover  { color: black; }
-.wt-dsgvo.agreed { background-color: #41a62a; }
-.wt-dsgvo icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-right: .2em;
-    background-image: url("dsgvo_icon.svg");
-    background-size: 1em auto;
-    background-position: top left;
-    background-repeat: no-repeat;
-}
-.wt-dsgvo.agreed icon {
-    background-position: bottom left;
+   div#login-cities-menu { display: none; }
 }
 
 
@@ -789,7 +725,10 @@ h1.site-title {
 /* ======================================================================== */
 @media screen and (max-width: 782px) {
    div#content { width: 100%; }
+
+   /* disable widgets/ right sidebar on mobile devices */
    /* div.content-sidebar-2 { display: none; } */
+   
    .primary-navigation {
       float: right;
    }

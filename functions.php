@@ -26,6 +26,27 @@ add_filter( 'wp_headers', 'AH_remove_x_pingback' );
 /* Remove XMLRPC, WLW, Generator and ShortLink tags from header */
 remove_action('wp_head', 'rsd_link');
 
+
+/* this function gets executed during login */
+function login_actions() {
+    $_SESSION["wetterturnier_city"] = get_user_option("wt_default_city");
+}
+
+add_action('wp_login', 'login_actions');
+
+/* automatic session reset */
+function logout_actions($userID) {
+   $sessions = WP_Session_Tokens::get_instance( $userID );
+   $sessions->destroy_all();//destroys all sessions
+   //wp_clear_auth_cookie();//clears cookies regarding WP Auth
+   delete_option( "wt_city_userid_" . (string)$userID );
+}
+
+// use anonymous function to pass current userID to logout_actions()
+$userID = get_current_user_id();
+add_action('wp_logout', function() { global $userID; logout_actions($userID); }, 10, 1);
+
+
 // ------------------------------------------------------------------
 /// Add Matomo (former piwik) tracking via retostauffer.org
 // ------------------------------------------------------------------
