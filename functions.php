@@ -25,7 +25,8 @@ add_action('wp_login', 'login_actions');
 
 /* automatic session reset */
 function logout_actions($userID) {
-	$sessions->destroy_all();//destroys all sessions
+   $sessions = WP_Session_Tokens::get_instance( $userID );
+   $sessions->destroy_all();//destroys all sessions
 	//wp_clear_auth_cookie();//clears cookies regarding WP Auth
 	delete_option( "wt_city_userid_" . (string)$userID );
 }
