@@ -726,7 +726,7 @@ h1.site-title {
 @media screen and (max-width: 782px) {
    div#content { width: 100%; }
 
-   /* disable widgets/ right sidebar on mobile devices */
+   /* disable widgets / right sidebar on mobile devices */
    /* div.content-sidebar-2 { display: none; } */
    
    .primary-navigation {
