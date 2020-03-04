@@ -778,17 +778,11 @@ h1.site-title {
    div#page.hfeed.site::before {
       display: none
    }
-   .search-box-wrapper {
-      padding-left: 0px;
-   }
    .site-content {
       margin-left: 0px;
    }
    .content-sidebar {
       margin-left: 0px;
-      width: 0px;
-   }
-   .search-box .search-field {
       width: 0px;
    }
    #secondary {
