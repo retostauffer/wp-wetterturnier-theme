@@ -130,7 +130,7 @@ div#main-content.home-content div#content div.twocolumn-right {
 }
 /* by default (for small devices) the right sidebar is hidden. The
  * user can choose which column to show (div.twocolumn-select). As soon
- * as the window width exceeds 1200 px both will be shown */
+ * as the window width exceeds 1280 px both will be shown */
 div#content.index-content .twocolumn-left  { display: none; }
 div#content.index-content .twocolumn-right { display: block; }
 /* twocolumn select tyle */
@@ -276,7 +276,7 @@ div.wetterturnier-cities-menu {
    float: left;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1279px) {
    div.header-main h1.site-title {
       padding-left: 90px;
    }
@@ -386,7 +386,7 @@ form[name='loginform'] > a {
     height: 1.2em;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1279px) {
    div#logout-topbar, div#login-topbar {
       display: block;
    }
@@ -592,7 +592,7 @@ form.bbp-login-form {
       margin-top: 10px; 
    }
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1279px) {
    .site-footer {
       padding: 0 320px 0 0;
    }
@@ -723,7 +723,7 @@ h1.site-title {
 
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 859px) {
    div#content { width: 100%; }
 
    /* disable widgets / right sidebar on mobile devices */
@@ -757,14 +757,14 @@ h1.site-title {
 
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
    div.content-sidebar, .content-sidebar { width: 300px; margin-left: -320px; }
-   #current-css-resolution:after { content: "Resolution: 1200px plus"; }
+   #current-css-resolution:after { content: "Resolution: 1280px plus"; }
 }
 
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1279px) {
    #content.site-content.forum-page { padding-left: 0 !important; }
 
    ul.wt-linkcollection name {
@@ -774,7 +774,7 @@ h1.site-title {
 }
 
 /*override parent themes settings*/
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1279px) {
    div#page.hfeed.site::before {
       display: none
    }
@@ -793,7 +793,7 @@ h1.site-title {
    }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
    div.content-sidebar, .content-sidebar { width: 300px; }
    /* Show navigation on the left hand side instead of bottom down */
    .site:before { width: 252px; }
@@ -806,11 +806,11 @@ h1.site-title {
    div.header-main { margin-left: 250px; } 
    li.wtnav-cities-small { display: none; }
    li.wtnav-cities-big   { display: block; }
-   #current-css-resolution:after { content: "Resolution: 1200px plus"; }
+   #current-css-resolution:after { content: "Resolution: 1280px plus"; }
 }
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
    div.content-sidebar, .content-sidebar { width: 300px; }
    /* Show wetterturnier logo */
    .primary-navigation li:hover > a, .primary-navigation li.focus > a {
@@ -833,7 +833,7 @@ h1.site-title {
    div#content.index-content .twocolumn-select {
       display: none;
    }
-   #current-css-resolution:after { content: "Resolution: 1200px plus"; }
+   #current-css-resolution:after { content: "Resolution: 1280px plus"; }
 }
 
 /* ======================================================================== */
@@ -848,7 +848,7 @@ h1.site-title {
    #current-css-resolution:after { content: "Resolution: 1800px plus"; }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
    .primary-sidebar { padding-top: 20px; }
 }
 
