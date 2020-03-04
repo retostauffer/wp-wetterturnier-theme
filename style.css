@@ -130,7 +130,7 @@ div#main-content.home-content div#content div.twocolumn-right {
 }
 /* by default (for small devices) the right sidebar is hidden. The
  * user can choose which column to show (div.twocolumn-select). As soon
- * as the window width exceeds 1080 px both will be shown */
+ * as the window width exceeds 1200 px both will be shown */
 div#content.index-content .twocolumn-left  { display: none; }
 div#content.index-content .twocolumn-right { display: block; }
 /* twocolumn select tyle */
@@ -276,7 +276,7 @@ div.wetterturnier-cities-menu {
    float: left;
 }
 
-@media screen and (max-width: 1007px) {
+@media screen and (max-width: 1199px) {
    div.header-main h1.site-title {
       padding-left: 90px;
    }
@@ -386,7 +386,7 @@ form[name='loginform'] > a {
     height: 1.2em;
 }
 
-@media screen and (max-width: 1007px) {
+@media screen and (max-width: 1199px) {
    div#logout-topbar, div#login-topbar {
       display: block;
    }
@@ -592,7 +592,7 @@ form.bbp-login-form {
       margin-top: 10px; 
    }
 }
-@media screen and (max-width: 1007px) {
+@media screen and (max-width: 1199px) {
    .site-footer {
       padding: 0 320px 0 0;
    }
@@ -716,14 +716,14 @@ h1.site-title {
 /* ======================================================================== */
 /* ======================================================================== */
 /* Hide search toogle */
-@media screen and (min-width: 594px) {
+@media screen and (min-width: 600px) {
    div.search-toggle { display: block; }
-   #current-css-resolution:after { content: "Resolution: 594px plus"; }
+   #current-css-resolution:after { content: "Resolution: 600px plus"; }
 }
 
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 849px) {
    div#content { width: 100%; }
 
    /* disable widgets / right sidebar on mobile devices */
@@ -733,13 +733,13 @@ h1.site-title {
       float: right;
    }
 }
-@media screen and (min-width: 783px) {
+@media screen and (min-width: 850px) {
 
    /* Show wordpress right sidebar with plugins and stuff.
     * Therefore we have to shrink the content box. */
    div.content-sidebar, .content-sidebar { width: 300px; margin-left: -320px; }
    div.content-sidebar-10 { display: block; }
-   #current-css-resolution:after { content: "Resolution: 784px plus"; }
+   #current-css-resolution:after { content: "Resolution: 850px plus"; }
    div#main-content.home-content div#content { margin-right: 320px; }
    
    /* site-title floated */
@@ -757,14 +757,14 @@ h1.site-title {
 
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
    div.content-sidebar, .content-sidebar { width: 300px; margin-left: -320px; }
-   #current-css-resolution:after { content: "Resolution: 900px plus"; }
+   #current-css-resolution:after { content: "Resolution: 1200px plus"; }
 }
 
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (max-width: 1007px) {
+@media screen and (max-width: 1199px) {
    #content.site-content.forum-page { padding-left: 0 !important; }
 
    ul.wt-linkcollection name {
@@ -772,7 +772,34 @@ h1.site-title {
       width: 100%;
    }
 }
-@media screen and (min-width: 1008px) {
+
+/*override parent themes settings*/
+@media screen and (max-width: 1199px) {
+   div#page.hfeed.site::before {
+      display: none
+   }
+   .search-box-wrapper {
+      padding-left: 0px;
+   }
+   .site-content {
+      margin-left: 0px;
+   }
+   .content-sidebar {
+      margin-left: 0px;
+      width: 0px;
+   }
+   .search-box .search-field {
+      width: 0px;
+   }
+   #secondary {
+      width: 0px;
+   }
+   .secondary-navigation {
+      width: 0px;
+   }
+}
+
+@media screen and (min-width: 1200px) {
    div.content-sidebar, .content-sidebar { width: 300px; }
    /* Show navigation on the left hand side instead of bottom down */
    .site:before { width: 252px; }
@@ -785,11 +812,11 @@ h1.site-title {
    div.header-main { margin-left: 250px; } 
    li.wtnav-cities-small { display: none; }
    li.wtnav-cities-big   { display: block; }
-   #current-css-resolution:after { content: "Resolution: 1008px plus"; }
+   #current-css-resolution:after { content: "Resolution: 1200px plus"; }
 }
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1200px) {
    div.content-sidebar, .content-sidebar { width: 300px; }
    /* Show wetterturnier logo */
    .primary-navigation li:hover > a, .primary-navigation li.focus > a {
@@ -812,7 +839,7 @@ h1.site-title {
    div#content.index-content .twocolumn-select {
       display: none;
    }
-   #current-css-resolution:after { content: "Resolution: 1080px plus"; }
+   #current-css-resolution:after { content: "Resolution: 1200px plus"; }
 }
 
 /* ======================================================================== */
@@ -827,7 +854,7 @@ h1.site-title {
    #current-css-resolution:after { content: "Resolution: 1800px plus"; }
 }
 
-@media screen and (min-width: 1008px) {
+@media screen and (min-width: 1200px) {
    .primary-sidebar { padding-top: 20px; }
 }
 
