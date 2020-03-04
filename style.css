@@ -723,7 +723,7 @@ h1.site-title {
 
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (max-width: 859px) {
+@media screen and (max-width: 959px) {
    div#content { width: 100%; }
 
    /* disable widgets / right sidebar on mobile devices */
