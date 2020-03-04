@@ -723,7 +723,7 @@ h1.site-title {
 
 /* ======================================================================== */
 /* ======================================================================== */
-@media screen and (max-width: 849px) {
+@media screen and (max-width: 899px) {
    div#content { width: 100%; }
 
    /* disable widgets / right sidebar on mobile devices */
@@ -733,13 +733,13 @@ h1.site-title {
       float: right;
    }
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 900px) {
 
    /* Show wordpress right sidebar with plugins and stuff.
     * Therefore we have to shrink the content box. */
    div.content-sidebar, .content-sidebar { width: 300px; margin-left: -320px; }
    div.content-sidebar-10 { display: block; }
-   #current-css-resolution:after { content: "Resolution: 850px plus"; }
+   #current-css-resolution:after { content: "Resolution: 900px plus"; }
    div#main-content.home-content div#content { margin-right: 320px; }
    
    /* site-title floated */
