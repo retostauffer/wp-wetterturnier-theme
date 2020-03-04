@@ -98,11 +98,11 @@ get_header(); ?>
                                            $cityObj->get("ID"),$current->tdate));
             }
 
-            // City-ranking
-            ///print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" city=\"1:2:3\" limit=3 slim=false header=false tdate=%d]",
-            ///                   $current->tdate));
-            //////print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" cities=\"1,2,3,4,5\" limit=3 slim=false header=false tdate=%d]",
-            //////                   $current->tdate));
+            // City-rankings
+            print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" cities=\"1,2,3\" limit=5 slim=false header=false tdate=%d]",
+            $current->tdate));
+            print do_shortcode(sprintf("[wetterturnier_ranking type=\"cities\" cities=\"1,2,3,4,5\" limit=5 slim=false header=false tdate=%d]",
+            $current->tdate));
             ?>
          </article>
          </div>
