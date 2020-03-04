@@ -583,7 +583,7 @@ form.bbp-login-form {
    padding-top: 7px;
    text-transform: uppercase;
 }
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1359px) {
    .site-footer logo:nth-child(4) {
       clear: both;
    }
@@ -598,10 +598,10 @@ form.bbp-login-form {
    }
    .site-footer h1 { display: none; }
 }
-@media screen and (max-width: 783px) {
+@media screen and (max-width: 959px) {
    .site-footer { padding: 0; }
 }
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 639px) {
    .site-footer logo, .site-footer logo img {
       width: 150px;
    }
