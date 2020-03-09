@@ -463,6 +463,12 @@ header.entry-header h1.entry-title {
     max-width: 100%;
 }
 
+/* Fix for forum topic dropdown menu */
+.type-forum.hentry .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_topic_status_select,
+.type-forum.hentry .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_stick_topic_select {
+   height: 32px;
+}
+
 .primary-sidebar .widget .widget-title {
     font-weight: bold;
     text-transform: uppercase;
