@@ -589,6 +589,12 @@ form.bbp-login-form {
    padding-top: 7px;
    text-transform: uppercase;
 }
+
+/* hide awkward element below footer */
+div#ui-datepicker-div {
+   display:none;
+}
+
 @media screen and (max-width: 1359px) {
    .site-footer logo:nth-child(4) {
       clear: both;
