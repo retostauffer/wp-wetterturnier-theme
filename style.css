@@ -465,7 +465,9 @@ header.entry-header h1.entry-title {
 
 /* Fix for forum topic dropdown menu */
 .type-forum.hentry .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_topic_status_select,
-.type-forum.hentry .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_stick_topic_select {
+.type-forum.hentry .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_stick_topic_select,
+.forum-page .entry-content .bbpress-wrapper .bbp-reply-form form#new-post > fieldset.bbp-form > div > p > select#bbp_reply_to,
+.forum-page .entry-content .bbpress-wrapper .bbp-reply-form form#new-post > fieldset.bbp-form > div > p > select#bbp_reply_status_select {
    height: 32px;
 }
 
