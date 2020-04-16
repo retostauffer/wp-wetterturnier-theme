@@ -4,7 +4,7 @@
 
 @ini_set( 'upload_max_size' , '64M' );
 @ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '120' );
+@ini_set( 'max_execution_time', '300' );
 
 // Disable automatic WordPress plugin updates:	
 add_filter( 'auto_update_plugin', '__return_false' );

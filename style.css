@@ -224,6 +224,7 @@ div#secondary-topbar {
    background-repeat: no-repeat;
    background-size: auto 60%;
 }
+
 div#secondary-topbar ul {
    display: none;
    position: relative;
@@ -232,11 +233,11 @@ div#secondary-topbar ul {
    border: none;
    margin: 0px;
    padding: 5px 0 0 0;
-
    list-style: none;
    min-width: 400px;
    background-color: #0c3772;
 }
+
 div#secondary-topbar ul li {
    list-style: none;
    padding: 3px 0;
@@ -310,6 +311,7 @@ div#logout-topbar, div#login-topbar {
    background-repeat: no-repeat;
    background-size: auto 60%;
 }
+
 #login-topbar       { background-image: url('login-topbar.svg'); }
 #logout-topbar      { background-image: url('logout-topbar.svg'); }
 
@@ -401,7 +403,7 @@ form[name='loginform'] > a {
 /* default header bg color */
 #site-header { pointer: cursor; background: #0c3772; position: relative; }
 
-/* styling the twenyfourteen child theme a little bit */
+/* styling the twentyfourteen child theme a little bit */
 aside.widget_pages h1 {
     display: none;
 }
@@ -464,8 +466,9 @@ header.entry-header h1.entry-title {
 }
 
 /* Fix for forum topic dropdown menu */
-.type-forum.hentry .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_topic_status_select,
-.type-forum.hentry .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_stick_topic_select,
+.bbpress .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_forum_id,
+.bbpress .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_topic_status_select,
+.bbpress .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_stick_topic_select,
 .forum-page .entry-content .bbpress-wrapper .bbp-reply-form form#new-post > fieldset.bbp-form > div > p > select#bbp_reply_to,
 .forum-page .entry-content .bbpress-wrapper .bbp-reply-form form#new-post > fieldset.bbp-form > div > p > select#bbp_reply_status_select {
    height: 32px;
@@ -683,7 +686,7 @@ div.header-main {
 #secondary {
    padding: 14px;
    width: 222px;
-   margin-top: 0px;
+   margin-top: -48px;
 }
 
 /* Styling polylang frontend stuff */
