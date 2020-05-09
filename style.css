@@ -466,6 +466,7 @@ header.entry-header h1.entry-title {
 }
 
 /* Fix for forum topic dropdown menu */
+.bbpress .entry-content .bbpress-wrapper .bbp-topic-split form#split_topic fieldset.bbp-form > div > * select.bbp_dropdown,
 .bbpress .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_forum_id,
 .bbpress .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_topic_status_select,
 .bbpress .entry-content .bbpress-wrapper .bbp-topic-form fieldset.bbp-form > div > p > select#bbp_stick_topic_select,
