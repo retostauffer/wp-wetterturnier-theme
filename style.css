@@ -158,6 +158,18 @@ div#main-content.home-content div#content div.twocolumn-footer {
    /* background-color: #3864a0; */
    background-color: #FF6600;
 }
+.search-box {
+   /* TODO fix size* */
+   background-color: #FF6600;
+   position: absolute;
+   right: 0px;
+   z-index:-999;
+   width: 324px;
+}
+.search-box input.search-field {
+   width: 324px;
+}
+
 a, .content-sidebar .widget a {
    color: #3864a0;
 }
