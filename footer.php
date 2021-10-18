@@ -50,6 +50,12 @@
             </a>
             <h1>Documents and Prices</h1>
          </logo>
+         <logo>
+            <a href="https://www.handelsregister.international/MetMaps+GmbH.html" target="_new">
+            <img src="<?php print $theme_uri; ?>/logo_metmaps.png" />
+            </a>
+            <h1>Visualisiation of Weather Data</h1>
+         </logo>
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 

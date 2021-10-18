@@ -164,10 +164,10 @@ div#main-content.home-content div#content div.twocolumn-footer {
    position: absolute;
    right: 0px;
    z-index:-999;
-   width: 324px;
+   width: 300px;
 }
 .search-box input.search-field {
-   width: 324px;
+   width: 300px;
 }
 
 a, .content-sidebar .widget a {
