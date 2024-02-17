@@ -27,6 +27,15 @@ add_filter( 'wp_headers', 'AH_remove_x_pingback' );
 remove_action('wp_head', 'rsd_link');
 
 
+#change registration url
+add_filter( 'register_url', 'custom_register_url' );
+function custom_register_url( $register_url )
+{
+    $register_url = get_permalink( 17187 );
+    return $register_url;
+}
+
+
 /* this function gets executed during login */
 function login_actions() {
     $_SESSION["wetterturnier_city"] = get_user_option("wt_default_city");
